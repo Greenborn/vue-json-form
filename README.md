@@ -8,7 +8,7 @@
 - Aún no se soporta inclusión de tabla de datos ya cargados 
 
 # Instalación
-```npm i vue-formulario-json```
+```npm i @greenborn/vue_json_form```
 
 # Uso
 ```<FormularioJSON :form_definition="configuration_json"></FormularioJSON>```
