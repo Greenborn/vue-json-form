@@ -39,31 +39,43 @@ const f_config = ref({
         header: "Parte 1",
         html_def: [
           { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
-            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
-            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
-              field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
-            } }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJRadioBtnInput', params:
-                { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
-                  field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
-                } 
-              },
-              { css_class:'', component: 'VFJCheckboxInput', params:
-                { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
-                  field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+              { 
+                component: 'VFJComponentGroup', css_class:'',
+                params:{ 
+                    id: "example_group_1",
+                    html_def: [
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
+                        { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+                          field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
+                        } }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [
+                          { css_class:'', component: 'VFJRadioBtnInput', params:
+                            { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                              field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
+                            } 
+                          },
+                          { css_class:'', component: 'VFJCheckboxInput', params:
+                            { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                              field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+                            } 
+                          }
+                        ] 
+                      },                      
+                    ]
                 } 
               }
             ] 
@@ -165,4 +177,7 @@ const events = ref({
 </script>
 
 <style>
+.component-group{
+  background-color: #ddd;
+}
 </style>

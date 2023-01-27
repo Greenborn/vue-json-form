@@ -11,7 +11,8 @@ import VFJText          from './columns/VFJText.vue'
 import VFJTextareaInput from './columns/VFJTextareaInput.vue'
 import VFJTextInput     from './columns/VFJTextInput.vue'
 
-import VFJTabsSection from './layout/VFJTabsSection.vue'
+import VFJTabsSection    from './layout/VFJTabsSection.vue'
+import VFJComponentGroup from './layout/VFJComponentGroup.vue'
 
 export const COMPONENTS_REFS = {
     'VFJButtonInput' : VFJButtonInput,
@@ -27,5 +28,6 @@ export const COMPONENTS_REFS = {
     'VFJTextareaInput' : VFJTextareaInput,
     'VFJTextInput' : VFJTextInput,
 
-    'VFJTabsSection' : VFJTabsSection
+    'VFJTabsSection' : VFJTabsSection,
+    'VFJComponentGroup' : VFJComponentGroup
 }

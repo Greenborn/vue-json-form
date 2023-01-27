@@ -1,6 +1,6 @@
 {
   "name": "@greenborn/vue_json_form",
-  "version": "0.1.46",
+  "version": "0.1.47",
   "description": "",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/Greenborn/vue-json-form.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Luciano Vega",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/Greenborn/vue-json-form/issues"
   },

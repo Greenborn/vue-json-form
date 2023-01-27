@@ -3,7 +3,6 @@
 **Componente aún no funcional**
 - Se puede crear un formulario (ver examples/test_1) pero el mismo no cuenta con validaciones
 - Aún no se disparan eventos al completar el formulario
-- Aún no se realizan llamados a API externa
 - Aún no se admiten loops de campos (conjunto de datos para describir registros)
 - Aún no se soporta inclusión de tabla de datos ya cargados 
 
@@ -13,10 +12,165 @@
 # Uso
 ```<FormularioJSON :form_definition="configuration_json"></FormularioJSON>```
 
+Ejemplo de configuración:
+```
+const configuration_json = ref({
+  "general_data": {
+    "field_options": {
+      "opciones_select_categoria": [
+        { id: 1, text: 'Categoria 1'},
+        { id: 2, text: 'Categoria 2'},
+        { id: 3, text: 'Categoria 3'},
+        { id: 4, text: 'Categoria 4'},
+      ],
+      "opciones_radio_ej": [
+        { id: 1, text: 'Radio 1'},
+        { id: 2, text: 'Radio 2'},
+        { id: 3, text: 'Radio 3'},
+        { id: 4, text: 'Radio 4'},
+      ],
+      "opciones_checkbox_ej": [
+        { id: 1, text: 'Checkbox 1'},
+        { id: 2, text: 'Checkbox 2'},
+        { id: 3, text: 'Checkbox 3'},
+        { id: 4, text: 'Checkbox 4'},
+      ]
+    }
+  },
+  "sections": { 
+    component: 'VFJTabsSection',
+    section_def: 
+    [
+      {
+        header: "Parte 1",
+        html_def: [
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
+            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
+            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+              field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
+            } }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJRadioBtnInput', params:
+                { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                  field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
+                } 
+              },
+              { css_class:'', component: 'VFJCheckboxInput', params:
+                { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                  field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+                } 
+              }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', disabled: false } },
+              { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider', required: false, disabled: false } },
+              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos', required: false, disabled: false } },
+            ] 
+          },
+          { css_class: 'justify-content-md-center', 
+            content: [
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente', disabled: false } }
+            ]
+          },
+        ],
+      },
+      {
+        header: "Parte 2",
+        html_def: [
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario Parte 2</h1>"} }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
+            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
+            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+              field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
+            } }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJRadioBtnInput', params:
+                { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                  field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
+                } 
+              },
+              { css_class:'', component: 'VFJCheckboxInput', params:
+                { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                  field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+                } 
+              }
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', required: false, disabled: false } },
+              { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+            ] 
+          },
+          { css_class: 'justify-content-md-center', content: 
+            [
+              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider', required: false, disabled: false } },
+              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos', required: false, disabled: false } },
+            ] 
+          },
+          { css_class: 'justify-content-md-center', 
+            content: [
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente', disabled: false } }
+            ]
+          },
+        ],
+      },
+      {
+        header: "Paso Final",
+        html_def: [
+          { css_class: 'justify-content-md-center', 
+            content: [
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio', disabled: false } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar', disabled: false } }
+            ]
+          },
+        ]
+      }
+    ]
+  }
+  
+})
+```
+
 # Definición JSON formulario
 [Definicion de JSON Formulario.md](Definicion_JSON_Formulario.md)
 
 # Change log
+- **0.1.47**: Se agrega soporte para grupo de campos
 - **0.1.46**: Ahora los botones permiten ir pagina adelante, atras, una especifica, y dar por finalizado el formulario (validaciones pendientes)
 - **0.1.45**: En JSON se agrega soporte para devidir el formulario en varias partes, y especificar como se requiere mostrar, por ej si se trata de una vista de tabs con VFJTabsSection
 - **0.1.44**: Componente VFJFileInput funcional falta, aplicar validaciones
