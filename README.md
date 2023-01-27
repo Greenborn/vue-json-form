@@ -1,18 +1,31 @@
 # Vue3 Formulario JSON
 
-**Componente aún no funcional**
+Este componente tiene como objetivo la generación de un formulario a partir de un JSON de configuración.
+
+Actualmente es funcional aunque hay cosas que faltan.
+
 - Se puede crear un formulario (ver examples/test_1) pero el mismo no cuenta con validaciones
-- Aún no se disparan eventos al completar el formulario
 - Aún no se admiten loops de campos (conjunto de datos para describir registros)
 - Aún no se soporta inclusión de tabla de datos ya cargados 
+- No hay soporte para autocompletado
 
 # Instalación
 ```npm i @greenborn/vue_json_form```
 
 # Uso
-```<FormularioJSON :form_definition="configuration_json"></FormularioJSON>```
 
-Ejemplo de configuración:
+En main.js
+```
+import { VueFormJSON } from '@greenborn/vue_json_form'
+import 'bootstrap/dist/css/bootstrap.css'
+
+createApp(App).use(VueFormJSON).mount('#app')
+```
+
+En componente a incluir el formulario:
+```<FormularioJSON :form_definition="configuration_json" :events="events"></FormularioJSON>```
+
+Ejemplo de configuración JSON formulario:
 ```
 const configuration_json = ref({
   "general_data": {
@@ -163,6 +176,14 @@ const configuration_json = ref({
     ]
   }
   
+})
+```
+
+Ejemplo de configuración Eventos:
+```
+const events = ref({
+  _input: async (e) => { console.log(e);  // Se ejecuta por cada modificación en el formulario },
+  _submit: async (e) => { console.log(e); // Se ejecuta luego de hacer click en submit }
 })
 ```
 
