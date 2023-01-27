@@ -30,5 +30,6 @@ export class FormConfigSections {
 export class FormConfig {
     general_data = new FormConfigGeneralData()
     sections     = new FormConfigSections()
+    runtime_data = {}
     field_rels   = []
 }

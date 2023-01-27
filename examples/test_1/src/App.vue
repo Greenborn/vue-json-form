@@ -159,6 +159,25 @@ const f_config = ref({
         html_def: [
           { css_class: 'justify-content-md-center', 
             content: [
+              { 
+                css_class:'', component: 'VFJLoopFieldGroup', 
+                params:{
+                  runtime_data_key: 'user_list',
+                  html_def: [
+                  { css_class: 'justify-content-md-center', content: 
+                      [
+                        { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', disabled: false } },
+                        { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+                      ] 
+                    }
+                  ]
+                } 
+              }
+            ]
+          },
+          { css_class: 'justify-content-md-center', 
+            content: [
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio', disabled: false } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar', disabled: false } }

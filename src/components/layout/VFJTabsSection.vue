@@ -39,7 +39,6 @@ const ACTION_INDEX = {
 
 onMounted(async ()=>{
     props.data_channel.subscribe('_user_button_action', 'btns_1', async ( evnt ) => {
-        console.log(evnt)
         if (ACTION_INDEX[ evnt.config.action ] != undefined) 
             ACTION_INDEX[ evnt.config.action ]( evnt )
     })

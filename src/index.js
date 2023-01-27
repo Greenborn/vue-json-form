@@ -18,6 +18,8 @@ import FileUpload from 'primevue/fileupload'
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
 
+import VFJButtonInput from './components/columns/VFJButtonInput.vue'
+
 import "primevue/resources/themes/nova/theme.css";
 import "primevue/resources/primevue.min.css";
 
@@ -38,6 +40,8 @@ export const VueFormJSON = {
 
         Vue.component("TabView", TabView)
         Vue.component("TabPanel", TabPanel)
+
+        Vue.component("VFJButtonInput", VFJButtonInput);
 
         Vue.component("FormularioJSON", FormularioJSON);
         Vue.component("FormRow", FormRow);

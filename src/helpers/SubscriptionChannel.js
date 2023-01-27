@@ -29,7 +29,7 @@ export class SubscriptionChannel {
         this.getters[ info ] = def_func
     }
 
-    async getData( info, callback ){
-        return await callback( await this.getters[ info ]() )
+    async getData( info, callback, params={} ){
+        return await callback( await this.getters[ info ]( params ) )
     }
 }

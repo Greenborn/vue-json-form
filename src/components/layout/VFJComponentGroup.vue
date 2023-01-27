@@ -10,6 +10,4 @@
 
 <script setup>
 const props = defineProps(['params', 'data_channel'])
-
-
 </script>

@@ -20,11 +20,23 @@ const formStorage   = ref(new FormStorage())
 const subs_data_channel = ref(new SubscriptionChannel())
 
 const BTN_ACTION_INDEX = {
-    'submit' : submit_form
+    'submit' : submit_form,
+    'list_add_new_data': list_add_new_data
 }
 
 async function submit_form(){
     await props.events._submit(formStorage.value.data_form_send)
+}
+
+async function list_add_new_data( event ){
+    if (!formConfig.value.runtime_data)
+        formConfig.value.runtime_data = {}
+    if (!formConfig.value.runtime_data[event.config.runtime_data_key])
+        formConfig.value.runtime_data[event.config.runtime_data_key] = []
+
+    formConfig.value.runtime_data[event.config.runtime_data_key].push({})
+    
+    subs_data_channel.value.streaming('runtime_list_data_added', { key:event.config.runtime_data_key, rows: formConfig.value.runtime_data[event.config.runtime_data_key] })
 }
 
 onMounted(async ()=>{
