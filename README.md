@@ -58,31 +58,43 @@ const configuration_json = ref({
         header: "Parte 1",
         html_def: [
           { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
-            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
-            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
-              field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
-            } }
-            ] 
-          },
-          { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJRadioBtnInput', params:
-                { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
-                  field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
-                } 
-              },
-              { css_class:'', component: 'VFJCheckboxInput', params:
-                { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
-                  field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+              { 
+                component: 'VFJComponentGroup', css_class:'',
+                params:{ 
+                    id: "example_group_1",
+                    html_def: [
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
+                        { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+                          field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
+                        } }
+                        ] 
+                      },
+                      { css_class: 'justify-content-md-center', content: 
+                        [
+                          { css_class:'', component: 'VFJRadioBtnInput', params:
+                            { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                              field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
+                            } 
+                          },
+                          { css_class:'', component: 'VFJCheckboxInput', params:
+                            { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                              field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
+                            } 
+                          }
+                        ] 
+                      },                      
+                    ]
                 } 
               }
             ] 
@@ -166,6 +178,25 @@ const configuration_json = ref({
         html_def: [
           { css_class: 'justify-content-md-center', 
             content: [
+              { 
+                css_class:'', component: 'VFJLoopFieldGroup', 
+                params:{
+                  runtime_data_key: 'user_list',
+                  html_def: [
+                  { css_class: 'justify-content-md-center', content: 
+                      [
+                        { css_class:'', component: 'VFJDateInput', params:{   dkey: 'date',    label: 'Campo de fecha', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJButtonInput', params:{ dkey: 'btn', action: 'test_action', label: 'Boton de prueba', disabled: false } },
+                        { css_class:'', component: 'VFJColorInput', params:{  dkey: 'color',  label: 'Campo de selección de color', required: false, disabled: false } },
+                      ] 
+                    }
+                  ]
+                } 
+              }
+            ]
+          },
+          { css_class: 'justify-content-md-center', 
+            content: [
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio', disabled: false } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar', disabled: false } }
@@ -191,6 +222,7 @@ const events = ref({
 [Definicion de JSON Formulario.md](Definicion_JSON_Formulario.md)
 
 # Change log
+- **0.1.48**: Se agrega soporte para loops (multiples registros) de campos pudiendo agregar/quitar/ y editar, ahora los componentes de formulario, en el onmounted actualizan el valor del modelo al registrado en el modelo general de formulario
 - **0.1.47**: Se agrega soporte para grupo de campos
 - **0.1.46**: Ahora los botones permiten ir pagina adelante, atras, una especifica, y dar por finalizado el formulario (validaciones pendientes)
 - **0.1.45**: En JSON se agrega soporte para devidir el formulario en varias partes, y especificar como se requiere mostrar, por ej si se trata de una vista de tabs con VFJTabsSection

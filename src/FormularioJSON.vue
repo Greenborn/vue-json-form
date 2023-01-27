@@ -21,22 +21,38 @@ const subs_data_channel = ref(new SubscriptionChannel())
 
 const BTN_ACTION_INDEX = {
     'submit' : submit_form,
-    'list_add_new_data': list_add_new_data
+    'list_add_new_data' : list_add_new_data,
+    'list_remove_data' : list_remove_data
 }
 
 async function submit_form(){
     await props.events._submit(formStorage.value.data_form_send)
 }
 
+async function list_remove_data( event ){
+    let key     = event.config.runtime_data_key
+    let rd_data = formConfig.value.runtime_data[key]
+
+    for (let i=0; i < rd_data.data.length; i++)
+        if ( rd_data.data[i]._i ==  event.config.reg_data._i ){
+            rd_data.data.splice(i,1)
+            subs_data_channel.value.streaming('runtime_list_data_updated', { key:key, rows: rd_data.data })
+            return true
+        }
+}
+
 async function list_add_new_data( event ){
+    let key = event.config.runtime_data_key
     if (!formConfig.value.runtime_data)
         formConfig.value.runtime_data = {}
-    if (!formConfig.value.runtime_data[event.config.runtime_data_key])
-        formConfig.value.runtime_data[event.config.runtime_data_key] = []
+    if (!formConfig.value.runtime_data[key])
+        formConfig.value.runtime_data[key] = { u_id:0, data: [] }
 
-    formConfig.value.runtime_data[event.config.runtime_data_key].push({})
+    let rd_data = formConfig.value.runtime_data[key]
+    rd_data.u_id ++
+    rd_data.data.push({ _i: rd_data.u_id })
     
-    subs_data_channel.value.streaming('runtime_list_data_added', { key:event.config.runtime_data_key, rows: formConfig.value.runtime_data[event.config.runtime_data_key] })
+    subs_data_channel.value.streaming('runtime_list_data_updated', { key:key, rows: rd_data.data })
 }
 
 onMounted(async ()=>{
@@ -53,5 +69,6 @@ onMounted(async ()=>{
     })
 
     subs_data_channel.value.setGetter('field_options', async ()=>{ return formConfig.value.general_data.field_options } )
+    subs_data_channel.value.setGetter('field_value', async ( id )=>{  console.log(id, formStorage.value); return formStorage.value.getValue(id) } )
 })
 </script>

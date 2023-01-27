@@ -166,9 +166,9 @@ const f_config = ref({
                   html_def: [
                   { css_class: 'justify-content-md-center', content: 
                       [
-                        { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
-                        { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', disabled: false } },
-                        { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJDateInput', params:{   dkey: 'date',    label: 'Campo de fecha', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJButtonInput', params:{ dkey: 'btn', action: 'test_action', label: 'Boton de prueba', disabled: false } },
+                        { css_class:'', component: 'VFJColorInput', params:{  dkey: 'color',  label: 'Campo de selección de color', required: false, disabled: false } },
                       ] 
                     }
                   ]

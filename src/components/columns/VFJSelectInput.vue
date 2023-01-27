@@ -23,6 +23,11 @@ function input_event(){
 onMounted(async ()=>{
     props.data_channel.getData('field_options', async (data) => {
         field_options.value = data[ props.params.field_options ]
+
+        props.data_channel.getData('field_value', async (data) => {
+            if (data != undefined)
+                model.value = data
+        }, props.params.key)
     })
 })
 </script>
