@@ -18,10 +18,11 @@ import FileUpload from 'primevue/fileupload'
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
 
-import VFJButtonInput from './components/columns/VFJButtonInput.vue'
+import VFJButtonInput from './components/columns/VFJButtonInput/VFJButtonInput.vue'
 
 import "primevue/resources/themes/nova/theme.css";
 import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
 
 export const VueFormJSON = {
     install(Vue, options) {

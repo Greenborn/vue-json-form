@@ -1,4 +1,4 @@
-import VFJButtonInput   from './columns/VFJButtonInput.vue'
+import VFJButtonInput   from './columns/VFJButtonInput/VFJButtonInput.vue'
 import VFJCheckboxInput from './columns/VFJCheckboxInput.vue'
 import VFJColorInput    from './columns/VFJColorInput.vue'
 import VFJDateInput     from './columns/VFJDateInput.vue'
@@ -13,7 +13,7 @@ import VFJTextInput     from './columns/VFJTextInput.vue'
 
 import VFJTabsSection    from './layout/VFJTabsSection.vue'
 import VFJComponentGroup from './layout/VFJComponentGroup.vue'
-import VFJLoopFieldGroup from './layout/VFJLoopFieldGroup.vue'
+import VFJLoopFieldGroup from './layout/VFJLoopFieldGroup/VFJLoopFieldGroup.vue'
 
 export const COMPONENTS_REFS = {
     'VFJButtonInput' : VFJButtonInput,

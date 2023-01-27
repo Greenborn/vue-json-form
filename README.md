@@ -222,6 +222,7 @@ const events = ref({
 [Definicion de JSON Formulario.md](Definicion_JSON_Formulario.md)
 
 # Change log
+- **0.1.49**: Se agrega dependencia Primeicons para el uso de iconos en botones, Ahora en los botones se puede configurar el icono, clases css, posicion del icono. Al componente VFJLoopFieldGroup ahora se le puede configurar los parametros de los botones que usa el mismo
 - **0.1.48**: Se agrega soporte para loops (multiples registros) de campos pudiendo agregar/quitar/ y editar, ahora los componentes de formulario, en el onmounted actualizan el valor del modelo al registrado en el modelo general de formulario
 - **0.1.47**: Se agrega soporte para grupo de campos
 - **0.1.46**: Ahora los botones permiten ir pagina adelante, atras, una especifica, y dar por finalizado el formulario (validaciones pendientes)
