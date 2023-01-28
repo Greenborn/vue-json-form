@@ -1,10 +1,14 @@
-//Se usa para definir los parametros inciales de configuración del componente VFJButtonInput
-export class VFJButtonInputConf {
+//Se usa para definir los parametros inciales de configuración del componente VFJDateInputConf
+export class VFJDateInputConf {
     label = ''
     class = ''
-    icon  = ''
-    iconPos = ''
     disabled = false
+    inline = false
+    key = ''
+    selectionMode = 'single'
+    dateFormat = 'dd.mm.yy'
+    showTime = false
+    required = false
     tooltip = ''
 
     constructor( params ){

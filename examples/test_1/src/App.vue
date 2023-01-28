@@ -29,6 +29,9 @@ const f_config = ref({
         { id: 3, text: 'Checkbox 3'},
         { id: 4, text: 'Checkbox 4'},
       ]
+    },
+    "autocomplete_options": {
+      "ciudades": [ 'Tandil', 'Mar del Plata', 'Ayacucho', 'Azul', 'Bolivar', 'Capital Federal' ]
     }
   },
   "sections": { 
@@ -54,9 +57,9 @@ const f_config = ref({
                         ] 
                       },
                       { css_class: 'justify-content-md-center', content: 
-                        [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
-                        { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
-                        { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+                        [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
+                        { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
+                        { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', 'tooltip':'hola', label: 'Campo Select',
                           field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
                         } }
                         ] 
@@ -64,12 +67,12 @@ const f_config = ref({
                       { css_class: 'justify-content-md-center', content: 
                         [
                           { css_class:'', component: 'VFJRadioBtnInput', params:
-                            { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                            { key: 'radio_ej', label: 'Campo Radio Button',
                               field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                             } 
                           },
                           { css_class:'', component: 'VFJCheckboxInput', params:
-                            { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                            { key: 'checkbox_ej', label: 'Campo Checkbox',
                               field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                             } 
                           }
@@ -82,20 +85,20 @@ const f_config = ref({
           },
           { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', disabled: false } },
-              { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha' } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
+              { css_class:'', component: 'VFJColorInput', params:{ key: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
             ] 
           },
           { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider', required: false, disabled: false } },
-              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos', required: false, disabled: false } },
+              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { css_class: 'justify-content-md-center', 
             content: [
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente', disabled: false } }
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -112,9 +115,9 @@ const f_config = ref({
             ] 
           },
           { css_class: 'justify-content-md-center', content: 
-            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', required: false, disabled: false, type: 'text' } },
-            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea', required: false, disabled: false } },
-            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select', required: false, disabled: false,
+            [{ css_class:'', component: 'VFJTextInput', params:{ key: 'name', label: 'Campo de texto', type: 'text' } },
+            { css_class:'', component: 'VFJTextareaInput', params:{ key: 'descripcion', label: 'Campo Textarea' } },
+            { css_class:'', component: 'VFJSelectInput', params:{ key: 'categoria', label: 'Campo Select',
               field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
             } }
             ] 
@@ -122,12 +125,12 @@ const f_config = ref({
           { css_class: 'justify-content-md-center', content: 
             [
               { css_class:'', component: 'VFJRadioBtnInput', params:
-                { key: 'radio_ej', label: 'Campo Radio Button', required: false, disabled: false,
+                { key: 'radio_ej', label: 'Campo Radio Button',
                   field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                 } 
               },
               { css_class:'', component: 'VFJCheckboxInput', params:
-                { key: 'checkbox_ej', label: 'Campo Checkbox', required: false, disabled: false,
+                { key: 'checkbox_ej', label: 'Campo Checkbox',
                   field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                 } 
               }
@@ -135,21 +138,21 @@ const f_config = ref({
           },
           { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha', required: false, disabled: false } },
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba', required: false, disabled: false } },
-              { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color', required: false, disabled: false } },
+              { css_class:'', component: 'VFJDateInput', params:{ key: 'date', label: 'Campo de fecha' } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba' } },
+              { css_class:'', component: 'VFJColorInput', params:{ key: 'color', label: 'Campo de selección de color' } },
             ] 
           },
           { css_class: 'justify-content-md-center', content: 
             [
-              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider', required: false, disabled: false } },
-              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos', required: false, disabled: false } },
+              { css_class:'', component: 'VFJRangeInput', params:{ key: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { css_class:'', component: 'VFJFileInput', params:{ key: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { css_class: 'justify-content-md-center', 
             content: [
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente', disabled: false } }
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -166,9 +169,9 @@ const f_config = ref({
                   html_def: [
                   { css_class: 'justify-content-md-center', content: 
                       [
-                        { css_class:'', component: 'VFJDateInput', params:{   dkey: 'date',    label: 'Campo de fecha', required: false, disabled: false } },
-                        { css_class:'', component: 'VFJButtonInput', params:{ dkey: 'btn', action: 'test_action', label: 'Boton de prueba', disabled: false } },
-                        { css_class:'', component: 'VFJColorInput', params:{  dkey: 'color',  label: 'Campo de selección de color', required: false, disabled: false } },
+                        { css_class:'', component: 'VFJDateInput', params:{   dkey: 'date',    label: 'Campo de fecha' } },
+                        { css_class:'', component: 'VFJButtonInput', params:{ dkey: 'btn', action: 'test_action', label: 'Boton de prueba' } },
+                        { css_class:'', component: 'VFJColorInput', params:{  dkey: 'color',  label: 'Campo de selección de color' } },
                       ] 
                     }
                   ]
@@ -178,9 +181,9 @@ const f_config = ref({
           },
           { css_class: 'justify-content-md-center', 
             content: [
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior', disabled: false } },
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio', disabled: false } },
-              { css_class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar', disabled: false } }
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
+              { css_class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar' } }
             ]
           },
         ]

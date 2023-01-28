@@ -1,5 +1,5 @@
 <template>
-    <Button :label="config.label" :class="config.class" :icon="config.icon" :iconPos="config.iconPos" @click="input_event($event)"/>
+    <Button :label="config.label" :class="config.class" :icon="config.icon" :iconPos="config.iconPos" v-tooltip="config.tooltip" @click="input_event($event)"/>
 </template>
 
 <script setup>

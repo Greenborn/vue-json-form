@@ -1,21 +1,25 @@
 <template>
     <div class="mb-3">
-        <label :for="params.key" class="form-label">{{ params.label }}</label>
+        <label :for="config.key" class="form-label">{{ config.label }}</label>
         <div class="input-group">
-            <Calendar :disabled="params.disabled" @year-change="input_event" @date-select="input_event" v-model="model" class="w-100" />
+            <ColorPicker 
+                v-tooltip="config.tooltip"
+                v-model="model" :inline="config.inline" @change="input_event"/>
         </div>        
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { VFJColorInputConf } from './VFJColorInputConf'
 
 const props = defineProps(['params', 'data_channel'])
 
+const config = ref(new VFJColorInputConf(props.params))
 const model = ref()
 
 function input_event(){
-    props.data_channel.streaming('_user_input_data', { config: props.params, data: model.value })
+    props.data_channel.streaming('_user_input_data', { config: config.value, data: model.value })
 }
 
 onMounted(async ()=>{

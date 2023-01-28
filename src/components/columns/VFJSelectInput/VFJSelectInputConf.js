@@ -1,11 +1,11 @@
-//Se usa para definir los parametros inciales de configuración del componente VFJButtonInput
-export class VFJButtonInputConf {
-    label = ''
-    class = ''
-    icon  = ''
-    iconPos = ''
-    disabled = false
+//Se usa para definir los parametros inciales de configuración del componente VFJSelectInput
+export class VFJSelectInputConf {
     tooltip = ''
+    field_options = ''
+    key = ''
+    label = ''
+    option_id = ''
+    option_label = ''
 
     constructor( params ){
         let keys = Object.keys(params)

@@ -14,6 +14,7 @@ import Image from 'primevue/image'
 import ColorPicker from 'primevue/colorpicker'
 import Slider from 'primevue/slider'
 import FileUpload from 'primevue/fileupload'
+import Tooltip from 'primevue/tooltip';
 
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
@@ -27,6 +28,9 @@ import "primeicons/primeicons.css";
 export const VueFormJSON = {
     install(Vue, options) {
         Vue.use(PrimeVue);
+
+        Vue.directive('tooltip', Tooltip);
+        
         Vue.component("InputText", InputText);
         Vue.component("RadioButton", RadioButton);
         Vue.component("Checkbox", Checkbox);
