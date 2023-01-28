@@ -2,7 +2,8 @@
 export class VFJSelectInputConf {
     tooltip = ''
     field_options = ''
-    key = ''
+    field = ''
+    dfield = ''
     label = ''
     option_id = ''
     option_label = ''

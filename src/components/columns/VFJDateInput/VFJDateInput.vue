@@ -1,6 +1,6 @@
 <template>
     <div class="mb-3">
-        <label :for="params.key" class="form-label">{{ params.label }}</label>
+        <label :for="config.field" class="form-label">{{ config.label }}</label>
         <div class="input-group">
             <Calendar :disabled="config.disabled" :inline="config.inline" :selectionMode="config.selectionMode"
                     :dateFormat="config.dateFormat" :showTime="config.showTime"
@@ -27,6 +27,8 @@ onMounted(async ()=>{
     props.data_channel.getData('field_value', async (data) => {
         if (data != undefined)
             model.value = data
-    }, props.params.key)
+        else if (config.value.value != null)
+            model.value = config.value.value
+    }, config.value.field)
 })
 </script>

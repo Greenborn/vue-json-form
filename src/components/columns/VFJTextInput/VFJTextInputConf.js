@@ -3,7 +3,8 @@ export class VFJTextInputConf{
     label = ''
     class = ''
     disabled = false
-    key = ''
+    field = ''
+    dfield = ''
     required = false
     type = 'text'
     autocomplete_options = ''

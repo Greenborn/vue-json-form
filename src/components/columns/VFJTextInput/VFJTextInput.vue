@@ -27,6 +27,6 @@ onMounted(async ()=>{
     props.data_channel.getData('field_value', async (data) => {
         if (data != undefined)
             model.value = data
-    }, props.params.key)
+    }, props.params.field)
 })
 </script>

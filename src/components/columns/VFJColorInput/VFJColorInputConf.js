@@ -3,7 +3,8 @@ export class VFJColorInputConf{
     label = ''
     class = ''
     disabled = false
-    key = ''
+    field = ''
+    dfield = ''
     required = false
     tooltip = ''
     inline = false

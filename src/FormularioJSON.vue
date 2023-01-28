@@ -30,29 +30,29 @@ async function submit_form(){
 }
 
 async function list_remove_data( event ){
-    let key     = event.config.runtime_data_key
-    let rd_data = formConfig.value.runtime_data[key]
+    let field     = event.config.runtime_data_field
+    let rd_data = formConfig.value.runtime_data[field]
 
     for (let i=0; i < rd_data.data.length; i++)
         if ( rd_data.data[i]._i ==  event.config.reg_data._i ){
             rd_data.data.splice(i,1)
-            subs_data_channel.value.streaming('runtime_list_data_updated', { key:key, rows: rd_data.data })
+            subs_data_channel.value.streaming('runtime_list_data_updated', { field:field, rows: rd_data.data })
             return true
         }
 }
 
 async function list_add_new_data( event ){
-    let key = event.config.runtime_data_key
+    let field = event.config.runtime_data_field
     if (!formConfig.value.runtime_data)
         formConfig.value.runtime_data = {}
-    if (!formConfig.value.runtime_data[key])
-        formConfig.value.runtime_data[key] = { u_id:0, data: [] }
+    if (!formConfig.value.runtime_data[field])
+        formConfig.value.runtime_data[field] = { u_id:0, data: [] }
 
-    let rd_data = formConfig.value.runtime_data[key]
+    let rd_data = formConfig.value.runtime_data[field]
     rd_data.u_id ++
     rd_data.data.push({ _i: rd_data.u_id })
     
-    subs_data_channel.value.streaming('runtime_list_data_updated', { key:key, rows: rd_data.data })
+    subs_data_channel.value.streaming('runtime_list_data_updated', { field:field, rows: rd_data.data })
 }
 
 onMounted(async ()=>{
@@ -69,6 +69,7 @@ onMounted(async ()=>{
     })
 
     subs_data_channel.value.setGetter('field_options', async ()=>{ return formConfig.value.general_data.field_options } )
+    subs_data_channel.value.setGetter('initial_values', async ()=>{ return formConfig.value.general_data.initial_values } )
     subs_data_channel.value.setGetter('field_value', async ( id )=>{  console.log(id, formStorage.value); return formStorage.value.getValue(id) } )
 })
 </script>

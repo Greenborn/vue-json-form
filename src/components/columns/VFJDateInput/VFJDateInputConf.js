@@ -4,17 +4,19 @@ export class VFJDateInputConf {
     class = ''
     disabled = false
     inline = false
-    key = ''
+    field = ''
+    dfield = ''
     selectionMode = 'single'
     dateFormat = 'dd.mm.yy'
     showTime = false
     required = false
     tooltip = ''
+    value = null
 
     constructor( params ){
         let keys = Object.keys(params)
-        for (let c=0; c < keys.length; c++)
+        for (let c=0; c < keys.length; c++){
             if (this[keys[c]] !== undefined)
-                this[keys[c]] = params[keys[c]]
+                this[keys[c]] = params[keys[c]]}
     }
 }

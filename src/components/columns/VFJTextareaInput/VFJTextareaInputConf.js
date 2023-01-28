@@ -3,7 +3,8 @@ export class VFJTextareaInputConf{
     label = ''
     class = ''
     disabled = false
-    key = ''
+    field = ''
+    dfield = ''
     required = false
     tooltip = ''
     rows = 5

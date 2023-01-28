@@ -1,6 +1,6 @@
 <template>
     <div class="mb-3">
-        <label :for="config.key" class="form-label">{{ config.label }}</label>
+        <label :for="config.field" class="form-label">{{ config.label }}</label>
         <div class="input-group">
             <ColorPicker 
                 v-tooltip="config.tooltip"
@@ -26,6 +26,6 @@ onMounted(async ()=>{
     props.data_channel.getData('field_value', async (data) => {
         if (data != undefined)
             model.value = data
-    }, props.params.key)
+    }, props.params.field)
 })
 </script>
