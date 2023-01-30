@@ -5,7 +5,6 @@ Este componente tiene como objetivo la generación de un formulario a partir de 
 Actualmente es funcional aunque hay cosas que faltan.
 
 - Se puede crear un formulario (ver examples/test_1) pero el mismo no cuenta con validaciones
-- Aún no se admiten loops de campos (conjunto de datos para describir registros)
 - Aún no se soporta inclusión de tabla de datos ya cargados 
 - No hay soporte para autocompletado
 
