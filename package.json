@@ -1,6 +1,6 @@
 {
   "name": "@greenborn/vue_json_form",
-  "version": "0.1.52",
+  "version": "0.1.53",
   "description": "",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
