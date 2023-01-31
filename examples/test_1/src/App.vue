@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <FormularioJSON :form_definition="f_config" :events="events"></FormularioJSON>
+    <FormularioJSON :form_definition="f_config" v-model="form_data"
+                    @submit="submitHandler" @input="inputHandler"></FormularioJSON>
+    {{ form_data }}
   </div>
   
 </template>
@@ -8,6 +10,7 @@
 <script setup>
 import { ref } from 'vue'
 
+const form_data = ref()
 const f_config = ref({
   "general_data": {
     "field_options": {
@@ -197,10 +200,15 @@ const f_config = ref({
   }
   
 })
-const events = ref({
-  _input: async (e) => { console.log(e) },
-  _submit: async (e) => { console.log(e) }
-})
+
+function inputHandler( event ){
+  console.log(event)
+}
+
+function submitHandler( event ){
+  console.log(event)
+}
+
 </script>
 
 <style>

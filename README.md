@@ -217,18 +217,17 @@ const configuration_json = ref({
 })
 ```
 
-Ejemplo de configuración Eventos:
-```
-const events = ref({
-  _input: async (e) => { console.log(e);  // Se ejecuta por cada modificación en el formulario },
-  _submit: async (e) => { console.log(e); // Se ejecuta luego de hacer click en submit }
-})
-```
+Eventos:
+|Evento| Descripción |
+|---|---|
+|@input| Se dispara por cada modificación de los datos de cualquier campo del formulario|
+|@submit| Se dispara al apretar el botón Submit (enviar)|
 
 # Definición JSON formulario
 [Definicion de JSON Formulario.md](Definicion_JSON_Formulario.md)
 
 # Change log
+- **0.1.53**: Se implementan los eventos @submit e @input; Se implementa v-model
 - **0.1.52**: Se reemplaza key por field y dkey por dfield
 - **0.1.51**: La configuración de los componentes VFJLoopFieldGroup ahora permite definir la información inicial de los campos, todavia falta afinar algunos detalles.
 - **0.1.50**: Se agrega posibilidad de definir tooltips a controles de tipo fecha, color, select, texto y botones, en dichos controles tambien se definen valores por defecto para algunas propiedades

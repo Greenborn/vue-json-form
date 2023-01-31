@@ -12,7 +12,9 @@ import { COMPONENTS_REFS } from './components/components'
 import { FormConfig } from './FormConfig'
 import { FormStorage } from './FormStorage'
 
-const props = defineProps(['form_definition', 'events'])
+const props = defineProps(['form_definition', 'modelValue'])
+
+const emit = defineEmits(['update:modelValue', 'submit', 'input'])
 
 const formConfig = ref(new FormConfig())
 const formStorage   = ref(new FormStorage())
@@ -26,7 +28,7 @@ const BTN_ACTION_INDEX = {
 }
 
 async function submit_form(){
-    await props.events._submit(formStorage.value.data_form_send)
+    emit('submit', formStorage.value.data_form_send)
 }
 
 async function list_remove_data( event ){
@@ -60,7 +62,8 @@ onMounted(async ()=>{
 
     subs_data_channel.value.subscribe('_user_input_data', 'modifi', async ( evnt ) => {
         formStorage.value.update( evnt )
-        await props.events._input( evnt )
+        emit('input', evnt)
+        emit('update:modelValue', formStorage.value)
     })
 
     subs_data_channel.value.subscribe('_user_button_action', 'btns_0', async ( evnt ) => {

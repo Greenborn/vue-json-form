@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@greenborn/vue_json_form": "^0.1.46",
+    "@greenborn/vue_json_form": "^0.1.53",
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
     "primeicons": "^6.0.1",
