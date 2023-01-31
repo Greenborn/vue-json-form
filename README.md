@@ -22,7 +22,9 @@ createApp(App).use(VueFormJSON).mount('#app')
 ```
 
 En componente a incluir el formulario:
-```<FormularioJSON :form_definition="configuration_json" :events="events"></FormularioJSON>```
+```
+<FormularioJSON :form_definition="f_config" v-model="form_data" @submit="submitHandler" @input="inputHandler"/>
+```
 
 Ejemplo de configuración JSON formulario:
 ```

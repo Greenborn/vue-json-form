@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <FormularioJSON :form_definition="f_config" v-model="form_data"
-                    @submit="submitHandler" @input="inputHandler"></FormularioJSON>
+                    @submit="submitHandler" @input="inputHandler"/>
     {{ form_data }}
   </div>
   
