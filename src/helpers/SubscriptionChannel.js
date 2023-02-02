@@ -30,6 +30,7 @@ export class SubscriptionChannel {
     }
 
     async getData( info, callback, params={} ){
-        return await callback( await this.getters[ info ]( params ) )
+        if (typeof this.getters[ info ] == 'function')
+            return await callback( await this.getters[ info ]( params ) )
     }
 }

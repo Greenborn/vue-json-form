@@ -19,7 +19,7 @@ import Tooltip from 'primevue/tooltip';
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
 
-import VFJButtonInput from './components/columns/VFJButtonInput/VFJButtonInput.vue'
+import VFJButtonInput from './columns/VFJButtonInput/VFJButtonInput.vue'
 
 import "primevue/resources/themes/nova/theme.css";
 import "primevue/resources/primevue.min.css";

@@ -7,7 +7,7 @@
 import { ref, onMounted } from 'vue'
 
 import { SubscriptionChannel } from './helpers/SubscriptionChannel'
-import { COMPONENTS_REFS } from './components/components'
+import { COMPONENTS_REFS } from './components'
 
 import { FormConfig } from './FormConfig'
 import { FormStorage } from './FormStorage'
@@ -28,7 +28,7 @@ const BTN_ACTION_INDEX = {
 }
 
 async function submit_form(){
-    emit('submit', formStorage.value.data_form_send)
+    emit('submit', formStorage.value.data_form)
 }
 
 async function list_remove_data( event ){
@@ -37,7 +37,17 @@ async function list_remove_data( event ){
 
     for (let i=0; i < rd_data.data.length; i++)
         if ( rd_data.data[i]._i ==  event.config.reg_data._i ){
+            
+            let sub_fields = event.config.sub_fields
+            for (let i=0; i < sub_fields.length; i++){
+                for (let j=0; j < sub_fields[i].content.length; j++){
+                    let c_params = sub_fields[i].content[j].params
+                    formStorage.value.deleteField( field + '|' + rd_data.data[i]._i  + '|' +c_params.dfield )
+                }
+            }
+
             rd_data.data.splice(i,1)
+            
             subs_data_channel.value.streaming('runtime_list_data_updated', { field:field, rows: rd_data.data })
             return true
         }
@@ -73,6 +83,6 @@ onMounted(async ()=>{
 
     subs_data_channel.value.setGetter('field_options', async ()=>{ return formConfig.value.general_data.field_options } )
     subs_data_channel.value.setGetter('initial_values', async ()=>{ return formConfig.value.general_data.initial_values } )
-    subs_data_channel.value.setGetter('field_value', async ( id )=>{  console.log(id, formStorage.value); return formStorage.value.getValue(id) } )
+    subs_data_channel.value.setGetter('field_value', async ( id )=>{  return formStorage.value.getValue(id) } )
 })
 </script>

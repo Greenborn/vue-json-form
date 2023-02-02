@@ -1,6 +1,6 @@
 {
   "name": "@greenborn/vue_json_form",
-  "version": "0.1.55",
+  "version": "0.1.56",
   "description": "",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
@@ -19,12 +19,12 @@
   "homepage": "https://github.com/Greenborn/vue-json-form#readme",
   "devDependencies": {
     "rollup": "^2.79.1",
+    "@rollup/plugin-terser": "^0.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-vue": "^6.0.0"
   },
   "files": [
-    "dist/*",
-    "examples/*"
+    "dist/*"
   ],
   "dependencies": {
     "bootstrap": "^5.1.3",

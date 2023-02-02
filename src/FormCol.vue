@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { COMPONENTS_REFS } from './components/components'
+import { COMPONENTS_REFS } from './components'
 
 const props = defineProps(['col_data', 'data_channel'])
 

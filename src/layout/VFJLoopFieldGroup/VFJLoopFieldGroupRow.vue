@@ -26,7 +26,7 @@ function loop_data() {
             for (let j=0; j < arr[i].content.length; j++){
                 let c_params = arr[i].content[j].params
                 if (c_params['dfield'] != undefined) {
-                    c_params['field'] = field + '_' + props.reg_data._i + '_' + c_params.dfield
+                    c_params['field'] = field + '|' + props.reg_data._i + '|' + c_params.dfield
                     c_params['value'] = init_values[ params.initial_values_id ][ c_params['dfield'] ]
                     props.data_channel.streaming('_user_input_data', { config: c_params, data: c_params['value'] })
                 }
@@ -41,7 +41,7 @@ function getCfg_remove_btn( reg_data ){
         action: 'list_remove_data',
         runtime_data_field:  props.params.runtime_data_field,
         icon:  props.params.btn_delete.icon, class:  props.params.btn_delete.class,
-        reg_data: reg_data, label:  props.params.btn_delete.label,
+        reg_data: {...reg_data}, sub_fields: props.params.html_def, label:  props.params.btn_delete.label,
     }
 }
 </script>
