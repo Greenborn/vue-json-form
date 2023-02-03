@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <FormularioJSON :form_definition="f_config" v-model="form_data"
+    <FormularioJSON :form_definition="f_config" v-model="form_data"  @update:modelValue="inputHandler"
                     @submit="submitHandler" @input="inputHandler"/>
     {{ form_data }}
   </div>
@@ -46,24 +46,24 @@ const f_config = ref({
     section_def: 
     [
       {
-        header: "Parte 1",
+        header: "Parte 1", 
         html_def: [
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [
               { 
                 component: 'VFJComponentGroup', css_class:'',
                 params:{ 
-                    id: "example_group_1",
+                    id: "example_group_1", 
                     html_def: [
-                      { css_class: 'justify-content-md-center', content: 
+                      { css_class: 'justify-content-md-center row', content: 
                         [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
                         ] 
                       },
-                      { css_class: 'justify-content-md-center', content: 
+                      { css_class: 'justify-content-md-center row', content: 
                         [{ css_class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
                         ] 
                       },
-                      { css_class: 'justify-content-md-center', content: 
+                      { css_class: 'justify-content-md-center row', content: 
                         [{ css_class:'', component: 'VFJTextInput', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
                         { css_class:'', component: 'VFJTextareaInput', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
                         { css_class:'', component: 'VFJSelectInput', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
@@ -71,7 +71,7 @@ const f_config = ref({
                         } }
                         ] 
                       },
-                      { css_class: 'justify-content-md-center', content: 
+                      { css_class: 'justify-content-md-center row', content: 
                         [
                           { css_class:'', component: 'VFJRadioBtnInput', params:
                             { field: 'radio_ej', label: 'Campo Radio Button',
@@ -90,20 +90,20 @@ const f_config = ref({
               }
             ] 
           },
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [
               { css_class:'', component: 'VFJDateInput', params:{ field: 'date', label: 'Campo de fecha' } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
               { css_class:'', component: 'VFJColorInput', params:{ field: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
             ] 
           },
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [
               { css_class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
               { css_class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
-          { css_class: 'justify-content-md-center', 
+          { css_class: 'justify-content-md-center row', 
             content: [
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
@@ -113,7 +113,7 @@ const f_config = ref({
       {
         header: "Parte 2",
         html_def: [
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [{ css_class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
             ] 
           },
@@ -129,7 +129,7 @@ const f_config = ref({
             } }
             ] 
           },
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [
               { css_class:'', component: 'VFJRadioBtnInput', params:
                 { field: 'radio_ej', label: 'Campo Radio Button',
@@ -150,13 +150,13 @@ const f_config = ref({
               { css_class:'', component: 'VFJColorInput', params:{ field: 'color', label: 'Campo de selección de color' } },
             ] 
           },
-          { css_class: 'justify-content-md-center', content: 
+          { css_class: 'justify-content-md-center row', content: 
             [
               { css_class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
               { css_class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
-          { css_class: 'justify-content-md-center', 
+          { css_class: 'justify-content-md-center row', 
             content: [
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
@@ -167,7 +167,7 @@ const f_config = ref({
       {
         header: "Paso Final",
         html_def: [
-          { css_class: 'justify-content-md-center', 
+          { css_class: 'justify-content-md-center row', 
             content: [
               { 
                 css_class:'', component: 'VFJLoopFieldGroup', 
@@ -175,7 +175,7 @@ const f_config = ref({
                   runtime_data_field: 'user_list',
                   initial_values_id: 'user_list_initial_values',
                   html_def: [
-                  { css_class: 'justify-content-md-center', content: 
+                  { css_class: 'justify-content-md-center row', content: 
                       [
                         { css_class:'', component: 'VFJDateInput', params:{   dfield: 'date',    label: 'Campo de fecha' } },
                         { css_class:'', component: 'VFJButtonInput', params:{ dfield: 'btn', action: 'test_action', label: 'Boton de prueba' } },
@@ -187,7 +187,7 @@ const f_config = ref({
               }
             ]
           },
-          { css_class: 'justify-content-md-center', 
+          { css_class: 'justify-content-md-center row', 
             content: [
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
               { css_class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
