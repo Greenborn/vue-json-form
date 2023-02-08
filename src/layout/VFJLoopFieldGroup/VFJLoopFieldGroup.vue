@@ -22,6 +22,7 @@ const props = defineProps(['params', 'modelValue'])
 
 const model      = ref( props.modelValue )
 const model_rows = ref(new FormStorage())
+const model_aux  = ref(new FormStorage())
 
 const emit = defineEmits(['update:modelValue', 'click'])
 
@@ -31,21 +32,36 @@ const cfg_new_btn = ref(conf.value.btn_create)
 const list_data = ref([])
 
 function update_model( evnt ){
-    model.value.update( evnt )
+    model_aux.value.update( evnt )
+    sync_upd( { list : conf.value.runtime_data_field } )
 }
 
 function click_add( evnt ){
     list_data.value.push({ _i: u_id.value })
     u_id.value ++
+    sync_upd( evnt )
 }
 
 function click_remove(evnt){
     for (let i=0; i < list_data.value.length; i++){
         if (list_data.value[i]._i == evnt.id){
-            model.value.delete(evnt)
+            model_aux.value.delete(evnt)
             list_data.value.splice(i,1)
             return true
         }
     }
+    sync_upd( evnt )    
 }
+
+function sync_upd( evnt ){
+    emit('update:modelValue', {
+        'config': { field : evnt.list  },
+        'data' : model_aux.value.data_form[ evnt.list ]
+    })
+}
+
+onMounted(async ()=>{
+    model_aux.value.field_options  = model.value.field_options
+    model_aux.value.initial_values = model.value.initial_values
+})
 </script>

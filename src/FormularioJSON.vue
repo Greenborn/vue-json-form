@@ -37,7 +37,7 @@ function update_model( evnt ){
 async function click( evnt ){
     emit( 'click', evnt.data )
 
-    if (BTN_ACTION_INDEX[ evnt.config.action ] != undefined) 
+    if (evnt.config != undefined && BTN_ACTION_INDEX[ evnt.config.action ] != undefined) 
         await BTN_ACTION_INDEX[ evnt.config.action ]( evnt )
 }
 

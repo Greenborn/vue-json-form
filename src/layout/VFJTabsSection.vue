@@ -29,7 +29,7 @@ function update_model( evnt ){
 function click( evnt ){
     emit('click', evnt)
 
-    if (ACTION_INDEX[ evnt.config.action ] != undefined) 
+    if (evnt.config?.action != undefined && ACTION_INDEX[ evnt.config.action ] != undefined) 
             ACTION_INDEX[ evnt.config.action ]( evnt )
 }
 
