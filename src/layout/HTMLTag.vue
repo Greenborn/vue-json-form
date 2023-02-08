@@ -2,7 +2,8 @@
     <div :class="row_data.class">
         <div class="col" >
             <CompInsert v-for="(col_data) in row_data.content" :data_channel="data_channel" :col_data="col_data" :key="col_data"
-                @update:modelValue="update_model" v-model="prev_model" @click_event="click_event"/>
+                @update:modelValue="update_model" v-model="prev_model" 
+                @click_event="click_event"/>
         </div>
     </div>
 </template>

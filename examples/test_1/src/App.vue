@@ -152,7 +152,7 @@ const f_config = ref({
           },
           { class: 'justify-content-md-center row', content: 
             [
-              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
               { class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },

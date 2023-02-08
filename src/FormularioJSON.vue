@@ -19,10 +19,10 @@ const props = defineProps(['form_definition', 'modelValue'])
 
 const emit = defineEmits(['update:modelValue', 'submit', 'input'])
 
-const prev_model = ref()
+const prev_model = ref(new FormStorage())
 
-const formConfig = ref(new FormConfig())
-const formStorage   = ref(new FormStorage())
+const formConfig  = ref(new FormConfig())
+const formStorage = ref(new FormStorage())
 const formService = ref(new FormService())
 
 const subs_data_channel = ref(new SubscriptionChannel())
