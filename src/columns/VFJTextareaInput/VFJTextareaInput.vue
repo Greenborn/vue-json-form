@@ -4,7 +4,8 @@
         <div class="input-group">
             <Textarea 
                 class="w-100"    v-tooltip="config.tooltip"
-                v-model="model" :rows="config.rows" :cols="config.cols" @input="input_event" :disabled="config.disabled" />
+                v-model="model" :rows="config.rows" :cols="config.cols" :disabled="config.disabled" 
+                @click="click_event" @input="input_event"  />
         </div>        
     </div>
 
@@ -16,10 +17,10 @@ import { ref } from 'vue'
 import { useInputCommon } from '../VFJInputComposable'
 
 const emit  = defineEmits(['update:modelValue'])
-const props = defineProps(['params', 'modelValue'])
+const props = defineProps(['params', 'modelValue', 'click'])
 
 const config = ref(new VFJTextareaInputConf(props.params))
 const model = ref()
 
-const { input_event } = useInputCommon( emit, config, props, model )
+const { input_event, click_event } = useInputCommon( emit, config, props, model )
 </script>

@@ -8,7 +8,7 @@
     <VFJLoopFieldGroupRow v-for="(reg_data) in list_data" :key="reg_data"
            :reg_data="reg_data" :params="conf" 
             v-model="model_rows" @update:modelValue="update_model" 
-            @remove="click_remove" />
+            @remove="click_remove" @click="click_event" />
     
 </template>
 
@@ -36,6 +36,11 @@ function update_model( evnt ){
     sync_upd( { list : conf.value.runtime_data_field } )
 }
 
+function click_event( evnt ){
+    emit('click', evnt)
+    console.log(46543,evnt)
+}
+
 function click_add( evnt ){
     list_data.value.push({ _i: u_id.value })
     u_id.value ++
@@ -54,9 +59,10 @@ function click_remove(evnt){
 }
 
 function sync_upd( evnt ){
+    let l = evnt.list
     emit('update:modelValue', {
-        'config': { field : evnt.list  },
-        'data' : model_aux.value.data_form[ evnt.list ]
+        'config': { field : l  },
+        'data' : model_aux.value.data_form[ l ]
     })
 }
 

@@ -4,7 +4,8 @@
         <div class="input-group">
             <ColorPicker 
                 v-tooltip="config.tooltip"
-                v-model="model" :inline="config.inline" @change="input_event"/>
+                v-model="model" :inline="config.inline" 
+                @change="input_event" @click="click_event" />
         </div>        
     </div>
 </template>
@@ -15,10 +16,10 @@ import { VFJColorInputConf } from './VFJColorInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'modelValue'])
-const emit  = defineEmits(['update:modelValue'])
+const emit  = defineEmits(['update:modelValue', 'click'])
 
 const config = ref(new VFJColorInputConf(props.params))
 const model  = ref()
 
-const { input_event } = useInputCommon( emit, config, props, model )
+const { input_event, click_event } = useInputCommon( emit, config, props, model )
 </script>

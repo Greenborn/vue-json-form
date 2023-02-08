@@ -7,7 +7,7 @@ export class VFJInputConfigBase {
     required = false
     autocomplete_options = ''
     tooltip = ''
-    list = ''
+    list = null
     id = 0
 
     constructor( params ){

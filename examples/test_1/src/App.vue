@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <FormularioJSON :form_definition="f_config" v-model="form_data"  @update:modelValue="inputHandler"
-                    @submit="submitHandler" @input="inputHandler"/>
+                    @submit="submitHandler" @input="inputHandler" @click="clickHandler"/>
     {{ form_data }}
   </div>
   
@@ -204,11 +204,15 @@ const f_config = ref({
 })
 
 function inputHandler( event ){
-  console.log(event)
+  console.log('input: ',event)
 }
 
 function submitHandler( event ){
-  console.log(event)
+  console.log('submit: ',event)
+}
+
+function clickHandler( event ){
+  console.log('click: ',event)
 }
 
 </script>

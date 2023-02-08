@@ -4,7 +4,8 @@
         <div class="input-group">
             <InputText 
                 v-tooltip="config.tooltip"
-                :disabled="config.disabled" @input="input_event"
+                :disabled="config.disabled" 
+                @input="input_event" @click="click_event"
                 :type="config.type"  v-model="model" class="w-100" />
         </div>        
     </div>
@@ -16,10 +17,10 @@ import { VFJTextInputConf } from './VFJTextInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const emit  = defineEmits(['update:modelValue'])
-const props = defineProps(['params', 'modelValue'])
+const props = defineProps(['params', 'modelValue', 'click'])
 
 const config = ref(new VFJTextInputConf(props.params))
 const model  = ref()
 
-const { input_event } = useInputCommon( emit, config, props, model )
+const { input_event, click_event } = useInputCommon( emit, config, props, model )
 </script>

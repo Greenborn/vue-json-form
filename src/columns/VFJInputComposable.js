@@ -5,6 +5,10 @@ export function useInputCommon( emit, config, props, model, field_options=undefi
         emit('update:modelValue', { config: config.value, data: model.value })
     }
 
+    function click_event(evnt){
+        emit('click', { config: config.value, data: model.value, evnt:evnt })
+    }
+
     onMounted(async ()=>{
         if (props.modelValue != undefined && config.value.field_options != undefined) {
             let data = props.modelValue.field_options 
@@ -18,5 +22,5 @@ export function useInputCommon( emit, config, props, model, field_options=undefi
         }
     })
 
-    return { input_event }
+    return { input_event, click_event }
 }
