@@ -1,8 +1,9 @@
 //Se usa para definir los parametros inciales de configuración del componente VFJCheckboxInput
 import { VFJInputConfigBase } from '../VFJInputConfigBase'
 export class VFJCheckboxInputConf extends VFJInputConfigBase{
-    option_id = ''
-    option_label = ''
+    option_id     = ''
+    option_label  = ''
+    field_options = ''
 
     constructor( params ){
         super (params)

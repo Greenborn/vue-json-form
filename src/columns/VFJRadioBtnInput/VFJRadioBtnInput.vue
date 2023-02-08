@@ -13,30 +13,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { VFJRadioBtnInputConf } from './VFJRadioBtnInputConf'
+import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'data_channel', 'modelValue'])
+const emit  = defineEmits(['update:modelValue'])
 
-const emit = defineEmits(['update:modelValue'])
-
-const config = ref(new VFJRadioBtnInputConf(props.params))
-
-const model = ref()
+const config        = ref(new VFJRadioBtnInputConf(props.params))
+const model         = ref()
 const field_options = ref([])
 
-function input_event(){
-    emit('update:modelValue', { config: config.value, data: model.value })
-}
-
-onMounted(async ()=>{
-    props.data_channel.getData('field_options', async (data) => {
-        field_options.value = data[ config.value.field_options ]
-
-        props.data_channel.getData('field_value', async (data) => {
-            if (data != undefined)
-                model.value = data
-        }, config.value.field)
-    })
-})
+const { input_event } = useInputCommon( emit, config, props, model, field_options)
 </script>

@@ -2,8 +2,9 @@
 import { VFJInputConfigBase } from '../VFJInputConfigBase'
 
 export class VFJSelectInputConf extends VFJInputConfigBase {
-    option_id = ''
-    option_label = ''
+    option_id     = ''
+    option_label  = ''
+    field_options = ''
 
     constructor( params ){
         super (params)

@@ -2,8 +2,9 @@
 import { VFJInputConfigBase } from '../VFJInputConfigBase'
 
 export class VFJRadioBtnInputConf extends VFJInputConfigBase {
-    option_id = ''
-    option_label = ''
+    option_id     = ''
+    option_label  = ''
+    field_options = ''
 
     constructor( params ){
         super (params)
