@@ -20,7 +20,6 @@ const emit  = defineEmits(['update:modelValue'])
 const props = defineProps(['params', 'modelValue', 'click'])
 
 const config = ref(new VFJTextareaInputConf(props.params))
-const model = ref()
 
-const { input_event, click_event } = useInputCommon( emit, config, props, model )
+const { input_event, click_event, model } = useInputCommon( emit, config, props )
 </script>

@@ -20,7 +20,6 @@ const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue', 'click'])
 
 const config = ref(new VFJDateInputConf(props.params))
-const model  = ref()
 
-const { input_event, click_event } = useInputCommon( emit, config, props, model )
+const { input_event, click_event, model } = useInputCommon( emit, config, props )
 </script>
