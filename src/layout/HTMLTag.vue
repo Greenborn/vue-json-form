@@ -28,6 +28,5 @@ function click_event( evnt ){
 }
 
 onMounted(async ()=>{
-    console.log(6,props.row_data.content)
 })
 </script>

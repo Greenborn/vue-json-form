@@ -12,7 +12,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-const props = defineProps(['params', 'data_channel'])
+const props = defineProps(['params', 'data_channel', 'modelValue'])
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 
