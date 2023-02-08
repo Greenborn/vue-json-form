@@ -18,7 +18,7 @@ import VFJLoopFieldGroupRow from './VFJLoopFieldGroupRow.vue'
 
 const props = defineProps(['params', 'data_channel', 'modelValue'])
 
-const prev_model = ref()
+const prev_model = ref( props.modelValue )
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 
@@ -34,9 +34,7 @@ function click_event( evnt ){
 const conf = ref(new VFJLoopFieldGroupConf(props.params))
 const list_data = ref([])
 
-onMounted(async ()=>{
-    prev_model.value = props.modelValue
-    
+onMounted(async ()=>{    
     props.data_channel.subscribe('runtime_list_data_updated', 'rd_'+conf.value.runtime_data_field, async ( data ) => {
         if (data.field == conf.value.runtime_data_field)
             list_data.value = data.rows

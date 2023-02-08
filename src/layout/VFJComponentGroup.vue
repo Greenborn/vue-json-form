@@ -15,7 +15,7 @@ const props = defineProps(['params', 'data_channel'])
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 
-const prev_model = ref()
+const prev_model = ref( props.modelValue )
 
 function update_model( evnt ){
     emit('update:modelValue', evnt)
@@ -26,6 +26,5 @@ function click_event( evnt ){
 }
 
 onMounted(async ()=>{
-    prev_model.value = props.modelValue
 })
 </script>

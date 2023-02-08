@@ -26,6 +26,5 @@ function input_event(){
 }
 
 onMounted(async ()=>{
-
 })
 </script>
