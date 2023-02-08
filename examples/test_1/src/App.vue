@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <FormularioJSON :form_definition="f_config" v-model="form_data"  @update:modelValue="inputHandler"
+    <FormularioJSON :form_definition="f_config" v-model="form_data" 
                     @submit="submitHandler" @input="inputHandler" @click="clickHandler"/>
     {{ form_data }}
   </div>

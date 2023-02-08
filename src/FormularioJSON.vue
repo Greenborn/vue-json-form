@@ -32,6 +32,7 @@ async function submit_form(){
 function update_model( evnt ){
     formStorage.value.update( evnt )
     emit('update:modelValue', formStorage.value)
+    emit('input', evnt)
 }
 
 async function click( evnt ){
