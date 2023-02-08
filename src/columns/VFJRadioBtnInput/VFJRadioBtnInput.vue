@@ -17,7 +17,7 @@ import { ref } from 'vue'
 import { VFJRadioBtnInputConf } from './VFJRadioBtnInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
-const props = defineProps(['params', 'data_channel', 'modelValue'])
+const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue'])
 
 const config        = ref(new VFJRadioBtnInputConf(props.params))

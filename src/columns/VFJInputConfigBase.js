@@ -7,6 +7,8 @@ export class VFJInputConfigBase {
     required = false
     autocomplete_options = ''
     tooltip = ''
+    list = ''
+    id = 0
 
     constructor( params ){
         let keys = Object.keys(params)

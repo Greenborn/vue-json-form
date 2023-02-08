@@ -1,13 +1,14 @@
 <template>
     <div class="row">
         <div class="col">
-            <VFJButtonInput :data_channel="data_channel"  @click_event="click_event" :params="getCfg_new_btn()" />
+            <VFJButtonInput   @click="click_add" :params="cfg_new_btn" />
         </div>
     </div>
     
     <VFJLoopFieldGroupRow v-for="(reg_data) in list_data" :key="reg_data"
-        :data_channel="data_channel" :reg_data="reg_data" :params="conf" 
-            v-model="prev_model" @update:modelValue="update_model" @click_event="click_event"  />
+           :reg_data="reg_data" :params="conf" 
+            v-model="model_rows" @update:modelValue="update_model" 
+            @remove="click_remove" />
     
 </template>
 
@@ -15,39 +16,36 @@
 import { ref, onMounted } from 'vue'
 import { VFJLoopFieldGroupConf } from './VFJLoopFieldGroupConf'
 import VFJLoopFieldGroupRow from './VFJLoopFieldGroupRow.vue'
+import { FormStorage } from '../../FormStorage'
 
-const props = defineProps(['params', 'data_channel', 'modelValue'])
+const props = defineProps(['params', 'modelValue'])
 
-const prev_model = ref( props.modelValue )
+const model      = ref( props.modelValue )
+const model_rows = ref(new FormStorage())
 
-const emit = defineEmits(['update:modelValue', 'click_event'])
+const emit = defineEmits(['update:modelValue', 'click'])
 
-function update_model( evnt ){
-    console.log(88,evnt)
-    emit('update:modelValue', evnt)
-}
-
-function click_event( evnt ){
-    emit('click_event', evnt)
-}
-
+const u_id = ref(0)
 const conf = ref(new VFJLoopFieldGroupConf(props.params))
+const cfg_new_btn = ref(conf.value.btn_create)
 const list_data = ref([])
 
-onMounted(async ()=>{    
-    props.data_channel.subscribe('runtime_list_data_updated', 'rd_'+conf.value.runtime_data_field, async ( data ) => {
-        if (data.field == conf.value.runtime_data_field)
-            list_data.value = data.rows
-    })
-})
-
-function getCfg_new_btn(){
-    return {
-        action: 'list_add_new_data', 
-        runtime_data_field: conf.value.runtime_data_field,
-        class: conf.value.btn_create.class, label: conf.value.btn_create.label,
-        icon: conf.value.btn_create.icon, iconPos:  conf.value.btn_create.iconPos
-    }
+function update_model( evnt ){
+    model.value.update( evnt )
 }
 
+function click_add( evnt ){
+    list_data.value.push({ _i: u_id.value })
+    u_id.value ++
+}
+
+function click_remove(evnt){
+    for (let i=0; i < list_data.value.length; i++){
+        if (list_data.value[i]._i == evnt.id){
+            model.value.delete(evnt)
+            list_data.value.splice(i,1)
+            return true
+        }
+    }
+}
 </script>

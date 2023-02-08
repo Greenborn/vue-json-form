@@ -17,7 +17,7 @@ import { ref, onMounted } from 'vue'
 import { VFJCheckboxInputConf } from './VFJCheckboxInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
-const props = defineProps(['params', 'data_channel', 'modelValue'])
+const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue'])
 
 const config        = ref(new VFJCheckboxInputConf(props.params))
