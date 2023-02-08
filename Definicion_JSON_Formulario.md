@@ -30,7 +30,7 @@ Siendo en un principio:
     clave2 : valor2,
     claveN : valorN
   },
-  "html_def":[
+  "content":[
     { .... columna 0 ......},
     { .... columna 1 ......},
     { .... columna 2 ......},
@@ -86,7 +86,7 @@ Por lo que de momento el JSON quedaría así:
     submit_msg: "Gracias, por inscribirte ..... .. .. revise su email .... ",
     claveN : valorN
   },
-  "html_def":[
+  "content":[
     { .... columna 0 ......},
     { .... columna 1 ......},
     { .... columna 2 ......},
@@ -146,7 +146,7 @@ Por lo que de momento el JSON quedaría así:
     submit_msg: "Gracias, por inscribirte ..... .. .. revise su email .... ",
     claveN : valorN
   },
-  "html_def":[
+  "content":[
     { 
       "class": "justify-content-md-center", 
       "content": [

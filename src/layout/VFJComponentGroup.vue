@@ -2,9 +2,10 @@
     <div class="row component-group">
         <div class="col">
             <HTMLTag 
-                v-for="(row_data) in params.html_def"
-                :row_data="row_data" :data_channel="data_channel" :key="row_data" v-model="prev_model" 
-                @update:modelValue="update_model"  @click_event="click_event"  />
+                v-for="(row_data) in params.content"
+                :row_data="row_data" :data_channel="data_channel" :key="row_data" 
+                v-model="prev_model" @update:modelValue="update_model"  
+                @click_event="click_event"  />
         </div>
     </div>
 </template>

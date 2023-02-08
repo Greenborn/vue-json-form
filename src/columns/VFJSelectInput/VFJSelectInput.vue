@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { VFJSelectInputConf } from './VFJSelectInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
@@ -18,7 +18,11 @@ const emit  = defineEmits(['update:modelValue'])
 
 const model  = ref()
 const config = ref(new VFJSelectInputConf(props.params))
-const field_options = ref([])
+const field_options = ref()
 
 const { input_event } = useInputCommon( emit, config, props, model, field_options)
+
+onMounted(async ()=>{
+        
+        })
 </script>

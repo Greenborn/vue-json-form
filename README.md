@@ -66,14 +66,14 @@ const configuration_json = ref({
     [
       {
         header: "Parte 1",
-        html_def: [
+        content: [
           { class: 'justify-content-md-center', content: 
             [
               { 
                 component: 'V_GROUP', class:'',
                 params:{ 
                     id: "example_group_1",
-                    html_def: [
+                    content: [
                       { class: 'justify-content-md-center', content: 
                         [{ class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
                         ] 
@@ -131,7 +131,7 @@ const configuration_json = ref({
       },
       {
         header: "Parte 2",
-        html_def: [
+        content: [
           { class: 'justify-content-md-center', content: 
             [{ class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
             ] 
@@ -185,7 +185,7 @@ const configuration_json = ref({
       },
       {
         header: "Paso Final",
-        html_def: [
+        content: [
           { class: 'justify-content-md-center', 
             content: [
               { 
@@ -193,7 +193,7 @@ const configuration_json = ref({
                 params:{
                   runtime_data_field: 'user_list',
                   initial_values_id: 'user_list_initial_values',
-                  html_def: [
+                  content: [
                   { class: 'justify-content-md-center', content: 
                       [
                         { class:'', component: 'I_DATE', params:{   dfield: 'date',    label: 'Campo de fecha' } },

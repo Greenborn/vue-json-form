@@ -6,9 +6,10 @@ export function useInputCommon( emit, config, props, model, field_options=undefi
     }
 
     onMounted(async ()=>{
-        if (props.modelValue?.field_options && config.value.field_options) {
+        if (props.modelValue != undefined && config.value.field_options != undefined) {
             let data = props.modelValue.field_options 
             field_options.value = data[ config.value.field_options ]
+            console.log(83,config.value,field_options.value)
         }
         
         if (props.modelValue !== undefined) {

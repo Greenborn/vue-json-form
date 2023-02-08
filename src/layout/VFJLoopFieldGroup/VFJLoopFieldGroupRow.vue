@@ -32,7 +32,7 @@ function click_event( evnt ){
 function loop_data() {
     let params = props.params 
     let field  = params.runtime_data_field
-    let arr    = params.html_def
+    let arr    = params.content
 
     props.data_channel.getData('initial_values', async (init_values) => {
         for (let i=0; i < arr.length; i++){
@@ -54,7 +54,7 @@ function getCfg_remove_btn( reg_data ){
         action: 'list_remove_data',
         runtime_data_field:  props.params.runtime_data_field,
         icon:  props.params.btn_delete.icon, class:  props.params.btn_delete.class,
-        reg_data: {...reg_data}, sub_fields: props.params.html_def, label:  props.params.btn_delete.label,
+        reg_data: {...reg_data}, sub_fields: props.params.content, label:  props.params.btn_delete.label,
     }
 }
 </script>

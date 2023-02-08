@@ -49,14 +49,14 @@ const f_config = ref({
     [
       {
         header: "Parte 1", 
-        html_def: [
+        content: [
           { class: 'justify-content-md-center row', content: 
             [
               { 
                 component: 'V_GROUP', class:'row',
                 params:{ 
                     id: "example_group_1", 
-                    html_def: [
+                    content: [
                       { class: 'justify-content-md-center row', content: 
                         [{ class:'', component: '_IMAGE', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
                         ] 
@@ -66,9 +66,9 @@ const f_config = ref({
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 
-                        [{ class:'', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
-                        { class:'', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
-                        { class:'', component: 'I_SELECT', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
+                        [{ class:'col', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
+                        { class:'col', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
+                        { class:'col', component: 'I_SELECT', params:{ field: 'categoria_1', 'tooltip':'hola1', label: 'Campo Select',
                           field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
                         } }
                         ] 
@@ -114,7 +114,7 @@ const f_config = ref({
       },
       {
         header: "Parte 2",
-        html_def: [
+        content: [
           { class: 'justify-content-md-center row', content: 
             [{ class:'', component: '_IMAGE', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
             ] 
@@ -168,7 +168,7 @@ const f_config = ref({
       },
       {
         header: "Paso Final",
-        html_def: [
+        content: [
           { class: 'justify-content-md-center row', 
             content: [
               { 
@@ -176,7 +176,7 @@ const f_config = ref({
                 params:{
                   runtime_data_field: 'user_list',
                   initial_values_id: 'user_list_initial_values',
-                  html_def: [
+                  content: [
                   { class: 'justify-content-md-center row', content: 
                       [
                         { class:'', component: 'I_DATE', params:{   dfield: 'date',    label: 'Campo de fecha' } },
