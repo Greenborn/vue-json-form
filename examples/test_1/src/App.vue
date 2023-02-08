@@ -10,7 +10,9 @@
 <script setup>
 import { ref } from 'vue'
 
-const form_data = ref()
+const form_data = ref({
+  'name': 'Juan Perez'
+})
 const f_config = ref({
   "general_data": {
     "field_options": {

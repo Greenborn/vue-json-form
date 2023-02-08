@@ -8,7 +8,8 @@ export class FormStorage {
     }
 
     getValue( id_field ){
-        return this.data_form[ id_field ]
+        if (this.data_form != undefined)
+            return this.data_form[ id_field ]
     }
 
     deleteField( id_field ){

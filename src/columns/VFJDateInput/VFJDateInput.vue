@@ -11,21 +11,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { VFJDateInputConf } from './VFJDateInputConf'
+import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'modelValue'])
-
-const emit = defineEmits(['update:modelValue'])
+const emit  = defineEmits(['update:modelValue'])
 
 const config = ref(new VFJDateInputConf(props.params))
-const model = ref()
+const model  = ref()
 
-function input_event(){
-    emit('update:modelValue', { config: config.value, data: model.value })
-}
-
-onMounted(async ()=>{
-    
-})
+const { input_event } = useInputCommon( emit, config, props, model )
 </script>

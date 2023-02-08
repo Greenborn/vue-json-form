@@ -29,7 +29,6 @@ function input_event(){
 }
 
 onMounted(async ()=>{
-    console.log(23, props.modelValue)
     props.data_channel.getData('field_options', async (data) => {
         field_options.value = data[ config.value.field_options ]
 

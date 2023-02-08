@@ -12,19 +12,14 @@
 
 <script setup>
 import { VFJTextareaInputConf } from './VFJTextareaInputConf'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+import { useInputCommon } from '../VFJInputComposable'
 
-const emit = defineEmits(['update:modelValue'])
-
+const emit  = defineEmits(['update:modelValue'])
 const props = defineProps(['params', 'modelValue'])
 
 const config = ref(new VFJTextareaInputConf(props.params))
 const model = ref()
 
-function input_event(){
-    emit('update:modelValue', { config: config.value, data: model.value })
-}
-
-onMounted(async ()=>{
-})
+const { input_event } = useInputCommon( emit, config, props, model )
 </script>

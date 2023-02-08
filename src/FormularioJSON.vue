@@ -87,7 +87,8 @@ async function list_add_new_data( event ){
 
 onMounted(async ()=>{
     formConfig.value = props.form_definition
-
+    prev_model.value.data_form = props.modelValue ? props.modelValue : {} 
+    
     subs_data_channel.value.setGetter('field_options', async ()=>{ return formConfig.value.general_data.field_options } )
     subs_data_channel.value.setGetter('initial_values', async ()=>{ return formConfig.value.general_data.initial_values } )
     subs_data_channel.value.setGetter('field_value', async ( id )=>{  return formStorage.value.getValue(id) } )
