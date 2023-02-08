@@ -9,13 +9,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 
 const props = defineProps(['row_data', 'data_channel', 'modelValue'])
 
-const prev_model = ref()
+const prev_model = ref( props.modelValue )
 
 function update_model( evnt ){
     emit('update:modelValue', evnt)
@@ -24,4 +24,7 @@ function update_model( evnt ){
 function click_event( evnt ){
     emit('click_event', evnt)
 }
+
+onMounted(async ()=>{
+})
 </script>

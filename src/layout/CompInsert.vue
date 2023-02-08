@@ -11,7 +11,7 @@ const emit = defineEmits(['update:modelValue', 'click_event'])
 
 const props = defineProps(['col_data', 'data_channel', 'modelValue'])
 
-const prev_model = ref()
+const prev_model = ref( props.modelValue )
 
 function update_model( evnt ){
     emit('update:modelValue', evnt)

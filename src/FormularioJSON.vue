@@ -46,7 +46,7 @@ async function click_event( evnt ){
     emit( 'click_event', evnt.data )
 
     if (BTN_ACTION_INDEX[ evnt.config.action ] != undefined) 
-            await BTN_ACTION_INDEX[ evnt.config.action ]( evnt )
+        await BTN_ACTION_INDEX[ evnt.config.action ]( evnt )
 }
 
 async function list_remove_data( event ){

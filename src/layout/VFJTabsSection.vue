@@ -54,5 +54,6 @@ const ACTION_INDEX = {
 }
 
 onMounted(async ()=>{
+    prev_model.value = props.modelValue
 })
 </script>
