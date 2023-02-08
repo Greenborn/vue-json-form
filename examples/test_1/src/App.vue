@@ -44,7 +44,7 @@ const f_config = ref({
     
   },
   "sections": { 
-    component: 'VFJTabsSection',
+    component: 'V_TABS',
     section_def: 
     [
       {
@@ -53,34 +53,34 @@ const f_config = ref({
           { class: 'justify-content-md-center row', content: 
             [
               { 
-                component: 'VFJComponentGroup', class:'',
+                component: 'V_GROUP', class:'row',
                 params:{ 
                     id: "example_group_1", 
                     html_def: [
                       { class: 'justify-content-md-center row', content: 
-                        [{ class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+                        [{ class:'', component: '_IMAGE', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 
-                        [{ class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
+                        [{ class:'', component: '_TEXT', params:{ html: "<h1>Titulo de formulario</h1>"} }
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 
-                        [{ class:'', component: 'VFJTextInput', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
-                        { class:'', component: 'VFJTextareaInput', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
-                        { class:'', component: 'VFJSelectInput', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
+                        [{ class:'', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
+                        { class:'', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
+                        { class:'', component: 'I_SELECT', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
                           field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
                         } }
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 
                         [
-                          { class:'', component: 'VFJRadioBtnInput', params:
+                          { class:'', component: 'I_RADIO', params:
                             { field: 'radio_ej', label: 'Campo Radio Button',
                               field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                             } 
                           },
-                          { class:'', component: 'VFJCheckboxInput', params:
+                          { class:'', component: 'I_CHECKBOX', params:
                             { field: 'checkbox_ej', label: 'Campo Checkbox',
                               field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                             } 
@@ -94,20 +94,20 @@ const f_config = ref({
           },
           { class: 'justify-content-md-center row', content: 
             [
-              { class:'', component: 'VFJDateInput', params:{ field: 'date', label: 'Campo de fecha' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
-              { class:'', component: 'VFJColorInput', params:{ field: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
+              { class:'', component: 'I_DATE', params:{ field: 'date', label: 'Campo de fecha' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
+              { class:'', component: 'I_COLOR', params:{ field: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
             ] 
           },
           { class: 'justify-content-md-center row', content: 
             [
-              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
-              { class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
+              { class:'', component: 'I_RANGE', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { class:'', component: 'I_FILE', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { class: 'justify-content-md-center row', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -116,29 +116,29 @@ const f_config = ref({
         header: "Parte 2",
         html_def: [
           { class: 'justify-content-md-center row', content: 
-            [{ class:'', component: 'VFJImage', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
+            [{ class:'', component: '_IMAGE', params:{ src: "https://www.primefaces.org/primevue/demo/images/primevue-logo-dark.svg", alt: "Vue logo" } }
             ] 
           },
           { class: 'justify-content-md-center', content: 
-            [{ class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario Parte 2</h1>"} }
+            [{ class:'', component: '_TEXT', params:{ html: "<h1>Titulo de formulario Parte 2</h1>"} }
             ] 
           },
           { class: 'justify-content-md-center', content: 
-            [{ class:'', component: 'VFJTextInput', params:{ field: 'name', label: 'Campo de texto', type: 'text' } },
-            { class:'', component: 'VFJTextareaInput', params:{ field: 'descripcion', label: 'Campo Textarea' } },
-            { class:'', component: 'VFJSelectInput', params:{ field: 'categoria', label: 'Campo Select',
+            [{ class:'', component: 'I_TEXT', params:{ field: 'name', label: 'Campo de texto', type: 'text' } },
+            { class:'', component: 'I_TEXTAREA', params:{ field: 'descripcion', label: 'Campo Textarea' } },
+            { class:'', component: 'I_SELECT', params:{ field: 'categoria', label: 'Campo Select',
               field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
             } }
             ] 
           },
           { class: 'justify-content-md-center row', content: 
             [
-              { class:'', component: 'VFJRadioBtnInput', params:
+              { class:'', component: 'I_RADIO', params:
                 { field: 'radio_ej', label: 'Campo Radio Button',
                   field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                 } 
               },
-              { class:'', component: 'VFJCheckboxInput', params:
+              { class:'', component: 'I_CHECKBOX', params:
                 { field: 'checkbox_ej', label: 'Campo Checkbox',
                   field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                 } 
@@ -147,21 +147,21 @@ const f_config = ref({
           },
           { class: 'justify-content-md-center', content: 
             [
-              { class:'', component: 'VFJDateInput', params:{ field: 'date', label: 'Campo de fecha' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba' } },
-              { class:'', component: 'VFJColorInput', params:{ field: 'color', label: 'Campo de selección de color' } },
+              { class:'', component: 'I_DATE', params:{ field: 'date', label: 'Campo de fecha' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'test_action', label: 'Boton de prueba' } },
+              { class:'', component: 'I_COLOR', params:{ field: 'color', label: 'Campo de selección de color' } },
             ] 
           },
           { class: 'justify-content-md-center row', content: 
             [
-              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
-              { class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
+              { class:'', component: 'I_RANGE', params:{ field: 'rango', min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { class:'', component: 'I_FILE', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { class: 'justify-content-md-center row', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_back', label: 'Anterior' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -172,16 +172,16 @@ const f_config = ref({
           { class: 'justify-content-md-center row', 
             content: [
               { 
-                class:'', component: 'VFJLoopFieldGroup', 
+                class:'', component: 'V_LOOP', 
                 params:{
                   runtime_data_field: 'user_list',
                   initial_values_id: 'user_list_initial_values',
                   html_def: [
                   { class: 'justify-content-md-center row', content: 
                       [
-                        { class:'', component: 'VFJDateInput', params:{   dfield: 'date',    label: 'Campo de fecha' } },
-                        { class:'', component: 'VFJButtonInput', params:{ dfield: 'btn', action: 'test_action', label: 'Boton de prueba' } },
-                        { class:'', component: 'VFJColorInput', params:{  dfield: 'color',  label: 'Campo de selección de color' } },
+                        { class:'', component: 'I_DATE', params:{   dfield: 'date',    label: 'Campo de fecha' } },
+                        { class:'', component: 'I_BUTTON', params:{ dfield: 'btn', action: 'test_action', label: 'Boton de prueba' } },
+                        { class:'', component: 'I_COLOR', params:{  dfield: 'color',  label: 'Campo de selección de color' } },
                       ] 
                     }
                   ]
@@ -191,9 +191,9 @@ const f_config = ref({
           },
           { class: 'justify-content-md-center row', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_back', label: 'Anterior' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'submit', label: 'Confirmar' } }
             ]
           },
         ]

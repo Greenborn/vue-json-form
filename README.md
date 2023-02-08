@@ -61,7 +61,7 @@ const configuration_json = ref({
     
   },
   "sections": { 
-    component: 'VFJTabsSection',
+    component: 'V_TABS',
     section_def: 
     [
       {
@@ -70,7 +70,7 @@ const configuration_json = ref({
           { class: 'justify-content-md-center', content: 
             [
               { 
-                component: 'VFJComponentGroup', class:'',
+                component: 'V_GROUP', class:'',
                 params:{ 
                     id: "example_group_1",
                     html_def: [
@@ -79,13 +79,13 @@ const configuration_json = ref({
                         ] 
                       },
                       { class: 'justify-content-md-center', content: 
-                        [{ class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario</h1>"} }
+                        [{ class:'', component: '_TEXT', params:{ html: "<h1>Titulo de formulario</h1>"} }
                         ] 
                       },
                       { class: 'justify-content-md-center', content: 
-                        [{ class:'', component: 'VFJTextInput', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
-                        { class:'', component: 'VFJTextareaInput', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
-                        { class:'', component: 'VFJSelectInput', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
+                        [{ class:'', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
+                        { class:'', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
+                        { class:'', component: 'I_SELECT', params:{ field: 'categoria', 'tooltip':'hola', label: 'Campo Select',
                           field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
                         } }
                         ] 
@@ -97,7 +97,7 @@ const configuration_json = ref({
                               field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                             } 
                           },
-                          { class:'', component: 'VFJCheckboxInput', params:
+                          { class:'', component: 'I_CHECKBOX', params:
                             { field: 'checkbox_ej', label: 'Campo Checkbox',
                               field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                             } 
@@ -111,20 +111,20 @@ const configuration_json = ref({
           },
           { class: 'justify-content-md-center', content: 
             [
-              { class:'', component: 'VFJDateInput', params:{ field: 'date', label: 'Campo de fecha' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
-              { class:'', component: 'VFJColorInput', params:{ field: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
+              { class:'', component: 'I_DATE', params:{ field: 'date', label: 'Campo de fecha' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'test_action','tooltip':'hola', label: 'Boton de prueba' } },
+              { class:'', component: 'I_COLOR', params:{ field: 'color','tooltip':'hola', label: 'Campo de selección de color' } },
             ] 
           },
           { class: 'justify-content-md-center', content: 
             [
-              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
-              { class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
+              { class:'', component: 'I_RANGE', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { class:'', component: 'I_FILE', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { class: 'justify-content-md-center', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -137,13 +137,13 @@ const configuration_json = ref({
             ] 
           },
           { class: 'justify-content-md-center', content: 
-            [{ class:'', component: 'VFJText', params:{ html: "<h1>Titulo de formulario Parte 2</h1>"} }
+            [{ class:'', component: '_TEXT', params:{ html: "<h1>Titulo de formulario Parte 2</h1>"} }
             ] 
           },
           { class: 'justify-content-md-center', content: 
-            [{ class:'', component: 'VFJTextInput', params:{ field: 'name', label: 'Campo de texto', type: 'text' } },
-            { class:'', component: 'VFJTextareaInput', params:{ field: 'descripcion', label: 'Campo Textarea' } },
-            { class:'', component: 'VFJSelectInput', params:{ field: 'categoria', label: 'Campo Select',
+            [{ class:'', component: 'I_TEXT', params:{ field: 'name', label: 'Campo de texto', type: 'text' } },
+            { class:'', component: 'I_TEXTAREA', params:{ field: 'descripcion', label: 'Campo Textarea' } },
+            { class:'', component: 'I_SELECT', params:{ field: 'categoria', label: 'Campo Select',
               field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
             } }
             ] 
@@ -155,7 +155,7 @@ const configuration_json = ref({
                   field_options: "opciones_radio_ej", option_id : "id", option_label: "text"
                 } 
               },
-              { class:'', component: 'VFJCheckboxInput', params:
+              { class:'', component: 'I_CHECKBOX', params:
                 { field: 'checkbox_ej', label: 'Campo Checkbox',
                   field_options: "opciones_checkbox_ej", option_id : "id", option_label: "text"
                 } 
@@ -164,21 +164,21 @@ const configuration_json = ref({
           },
           { class: 'justify-content-md-center', content: 
             [
-              { class:'', component: 'VFJDateInput', params:{ field: 'date', label: 'Campo de fecha' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'test_action', label: 'Boton de prueba' } },
-              { class:'', component: 'VFJColorInput', params:{ field: 'color', label: 'Campo de selección de color' } },
+              { class:'', component: 'I_DATE', params:{ field: 'date', label: 'Campo de fecha' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'test_action', label: 'Boton de prueba' } },
+              { class:'', component: 'I_COLOR', params:{ field: 'color', label: 'Campo de selección de color' } },
             ] 
           },
           { class: 'justify-content-md-center', content: 
             [
-              { class:'', component: 'VFJRangeInput', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
-              { class:'', component: 'VFJFileInput', params:{ field: 'file', label: 'Campo de subida de archivos' } },
+              { class:'', component: 'I_RANGE', params:{ field: 'rango', range:false, min:0, step:1, max:200, label: 'Campo de selección tipo Slider' } },
+              { class:'', component: 'I_FILE', params:{ field: 'file', label: 'Campo de subida de archivos' } },
             ] 
           },
           { class: 'justify-content-md-center', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_next', label: 'Siguiente' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_back', label: 'Anterior' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_next', label: 'Siguiente' } }
             ]
           },
         ],
@@ -189,16 +189,16 @@ const configuration_json = ref({
           { class: 'justify-content-md-center', 
             content: [
               { 
-                class:'', component: 'VFJLoopFieldGroup', 
+                class:'', component: 'V_LOOP', 
                 params:{
                   runtime_data_field: 'user_list',
                   initial_values_id: 'user_list_initial_values',
                   html_def: [
                   { class: 'justify-content-md-center', content: 
                       [
-                        { class:'', component: 'VFJDateInput', params:{   dfield: 'date',    label: 'Campo de fecha' } },
-                        { class:'', component: 'VFJButtonInput', params:{ dfield: 'btn', action: 'test_action', label: 'Boton de prueba' } },
-                        { class:'', component: 'VFJColorInput', params:{  dfield: 'color',  label: 'Campo de selección de color' } },
+                        { class:'', component: 'I_DATE', params:{   dfield: 'date',    label: 'Campo de fecha' } },
+                        { class:'', component: 'I_BUTTON', params:{ dfield: 'btn', action: 'test_action', label: 'Boton de prueba' } },
+                        { class:'', component: 'I_COLOR', params:{  dfield: 'color',  label: 'Campo de selección de color' } },
                       ] 
                     }
                   ]
@@ -208,9 +208,9 @@ const configuration_json = ref({
           },
           { class: 'justify-content-md-center', 
             content: [
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_back', label: 'Anterior' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
-              { class:'', component: 'VFJButtonInput', params:{ action: 'submit', label: 'Confirmar' } }
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_back', label: 'Anterior' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'section_goTo', action_params:{ id: 0 }, label: 'Inicio' } },
+              { class:'', component: 'I_BUTTON', params:{ action: 'submit', label: 'Confirmar' } }
             ]
           },
         ]
@@ -233,23 +233,23 @@ Eventos:
 # Change log
 - **0.1.53**: Se implementan los eventos @submit e @input; Se implementa v-model
 - **0.1.52**: Se reemplaza key por field y dkey por dfield
-- **0.1.51**: La configuración de los componentes VFJLoopFieldGroup ahora permite definir la información inicial de los campos, todavia falta afinar algunos detalles.
+- **0.1.51**: La configuración de los componentes V_LOOP ahora permite definir la información inicial de los campos, todavia falta afinar algunos detalles.
 - **0.1.50**: Se agrega posibilidad de definir tooltips a controles de tipo fecha, color, select, texto y botones, en dichos controles tambien se definen valores por defecto para algunas propiedades
-- **0.1.49**: Se agrega dependencia Primeicons para el uso de iconos en botones, Ahora en los botones se puede configurar el icono, clases css, posicion del icono. Al componente VFJLoopFieldGroup ahora se le puede configurar los parametros de los botones que usa el mismo
+- **0.1.49**: Se agrega dependencia Primeicons para el uso de iconos en botones, Ahora en los botones se puede configurar el icono, clases css, posicion del icono. Al componente V_LOOP ahora se le puede configurar los parametros de los botones que usa el mismo
 - **0.1.48**: Se agrega soporte para loops (multiples registros) de campos pudiendo agregar/quitar/ y editar, ahora los componentes de formulario, en el onmounted actualizan el valor del modelo al registrado en el modelo general de formulario
 - **0.1.47**: Se agrega soporte para grupo de campos
 - **0.1.46**: Ahora los botones permiten ir pagina adelante, atras, una especifica, y dar por finalizado el formulario (validaciones pendientes)
-- **0.1.45**: En JSON se agrega soporte para devidir el formulario en varias partes, y especificar como se requiere mostrar, por ej si se trata de una vista de tabs con VFJTabsSection
-- **0.1.44**: Componente VFJFileInput funcional falta, aplicar validaciones
-- **0.1.43**: Componente VFJColorInput funcional; componente VFJRangeInput funcional
-- **0.1.42**: Componente VFJButtonInput funcional, aunque aun no se atienden las acciones de los botones; componente VFJImage funcional
-- **0.1.41**: Componente VFJDateInput funcional, aun no se aplican validaciones ni formateos
-- **0.1.40**: Componente VFJCheckboxInput funcional, por ahora solo tiene en cuenta opciones definidas directamente en JSON (No via API)
+- **0.1.45**: En JSON se agrega soporte para devidir el formulario en varias partes, y especificar como se requiere mostrar, por ej si se trata de una vista de tabs con V_TABS
+- **0.1.44**: Componente I_FILE funcional falta, aplicar validaciones
+- **0.1.43**: Componente I_COLOR funcional; componente I_RANGE funcional
+- **0.1.42**: Componente I_BUTTON funcional, aunque aun no se atienden las acciones de los botones; componente VFJImage funcional
+- **0.1.41**: Componente I_DATE funcional, aun no se aplican validaciones ni formateos
+- **0.1.40**: Componente I_CHECKBOX funcional, por ahora solo tiene en cuenta opciones definidas directamente en JSON (No via API)
 - **0.1.39**: Componente VFJRadioBtnInput funcional, por ahora solo tiene en cuenta opciones definidas directamente en JSON (No via API)
-- **0.1.38**: Componente VFJSelectInput funcional, por ahora solo tiene en cuenta opciones definidas directamente ne JSON (No via API)
-- **0.1.36**: Componente VFJTextareaInput funcional, aun no se aplican validaciones
-- **0.1.35**: Componente VFJTextInput funcional, aunque aun no se aplican validaciones
-- **0.1.33**: Componente VFJText funcional
+- **0.1.38**: Componente I_SELECT funcional, por ahora solo tiene en cuenta opciones definidas directamente ne JSON (No via API)
+- **0.1.36**: Componente I_TEXTAREA funcional, aun no se aplican validaciones
+- **0.1.35**: Componente I_TEXT funcional, aunque aun no se aplican validaciones
+- **0.1.33**: Componente _TEXT funcional
 - **0.1.32**: Se agregan componentes base para los diferentes tipos de campos, el componente FormCol ya asigna el componente correpsondiente y los parametros de acuerdo al JSON de configuración
 - **0.1.31**: Se generan las columnas del formulario
 - **0.1.30**: Se generan las filas del formulario
