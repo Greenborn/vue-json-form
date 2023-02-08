@@ -1,6 +1,7 @@
 <template>
     <component 
-        :is="COMPONENTS_REFS[ formConfig.sections.component ]" :data_channel="subs_data_channel" :params="formConfig.sections.section_def"
+        :is="COMPONENTS_REFS[ formConfig.sections.component ]" 
+        :data_channel="subs_data_channel" :params="formConfig.sections.section_def"
         @click_event="click_event" v-model="prev_model" @update:modelValue="update_model"></component>    
 </template>
 

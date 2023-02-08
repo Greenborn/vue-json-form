@@ -1,5 +1,5 @@
 <template>
-    <component :is="COMPONENTS_REFS[ col_data.component ]" :class="col_data.css_class" :data_channel="data_channel" :params="col_data.params"
+    <component :is="COMPONENTS_REFS[ col_data.component ]" :class="col_data.class" :data_channel="data_channel" :params="col_data.params"
         @update:modelValue="update_model" v-model="prev_model" @click_event="click_event"/>
 </template>
 

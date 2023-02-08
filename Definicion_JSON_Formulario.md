@@ -113,7 +113,7 @@ información, el mismo recibiría como parámetros:
   - **color**: Color de la fuente.
   - **justify**: Tipo de justificado del texto, si se alinea a la derecha, izquierda, centro o justificado.
   - **bg_color**: Color de fondo que se aplicaría a todo el contenedor.
-  - **css_class**: Clases de bootstrap, en principio para definir el ancho de la columna, (la clase col está implicita).
+  - **class**: Clases de bootstrap, en principio para definir el ancho de la columna, (la clase col está implicita).
 
 - **imagen**: Solo para agregar una imagen, sus parámetros serían:
   - **src**: URL de la imagen
@@ -122,13 +122,13 @@ información, el mismo recibiría como parámetros:
   - **min_h**: Alto mínimo
   - **max_h**: Alto máximo
   - **alt**: Texto alternativo de la imagen
-  - **css_class**: Clases de bootstrap, en principio para definir el ancho de la columna.
+  - **class**: Clases de bootstrap, en principio para definir el ancho de la columna.
 
 ### Definición de filas
 
 Una fila estaría definida por las siguientes propiedades:
 
-- **css_class**: Clases de bootstrap, que podrían ser utilizadas para por Ej. centrar columnas, etc, la clase "row" ya estaría implicita.
+- **class**: Clases de bootstrap, que podrían ser utilizadas para por Ej. centrar columnas, etc, la clase "row" ya estaría implicita.
 - **content**: Arreglo que define el contenido de la fila, ya sea alguno de los componentes ya citados o los campos a nombrar a continuación.
 
 Por lo que de momento el JSON quedaría así:
@@ -148,7 +148,7 @@ Por lo que de momento el JSON quedaría así:
   },
   "html_def":[
     { 
-      "css_class": "justify-content-md-center", 
+      "class": "justify-content-md-center", 
       "content": [
         {
           "component": "VFJImage",
@@ -160,12 +160,12 @@ Por lo que de momento el JSON quedaría así:
             "min_h": "",
             "max_h": "5rem"
           },
-          "css_class":""
+          "class":""
         }
       ] 
     },
     {
-      "css_class": "justify-content-md-center", 
+      "class": "justify-content-md-center", 
       "content": [
         {
           "component": "VFJText",
@@ -173,7 +173,7 @@ Por lo que de momento el JSON quedaría así:
             "html": "<h1> Inscripción Formulario 1</h1>",
             styles: { color: #FFF }
           },
-          "css_class":"",
+          "class":"",
         }
       ]
     },
