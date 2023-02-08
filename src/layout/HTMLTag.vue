@@ -1,15 +1,17 @@
 <template>
     <div :class="row_data.class">
         <div class="col" >
-            <CompInsert v-for="(col_data) in row_data.content" :data_channel="data_channel" :col_data="col_data" :key="col_data"
-                @update:modelValue="update_model" v-model="prev_model" 
-                @click_event="click_event"/>
+            <component  v-for="(col_data) in row_data.content" :key="col_data"
+                        :is="COMPONENTS_REFS[ col_data.component ]" :class="col_data.class" :data_channel="data_channel" :params="col_data.params"
+                        @update:modelValue="update_model" v-model="prev_model" 
+                        @click_event="click_event"/>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { COMPONENTS_REFS } from '../components'
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 
@@ -26,5 +28,6 @@ function click_event( evnt ){
 }
 
 onMounted(async ()=>{
+    console.log(6,prev_model.value)
 })
 </script>

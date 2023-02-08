@@ -5,7 +5,8 @@
         <HTMLTag 
             v-for="(row_data) in loop_data()"
             :row_data="row_data" :data_channel="data_channel" :key="row_data" 
-            v-model="prev_model" @update:modelValue="update_model" @click_event="click_event" />
+            v-model="prev_model" @update:modelValue="update_model" 
+            @click_event="click_event" />
     </div>
     <div class="col-auto">
         <VFJButtonInput :data_channel="data_channel" :params="getCfg_remove_btn( reg_data )" @click_event="click_event" />
@@ -16,7 +17,7 @@
 
 <script setup>
 import { ref } from 'vue'
-const prev_model = ref()
+const prev_model = ref(props.modelValue)
 const props = defineProps(['params', 'reg_data', 'data_channel', 'modelValue'])
 const emit = defineEmits(['update:modelValue', 'click_event'])
 

@@ -17,7 +17,7 @@ import { ref, onMounted } from 'vue'
 
 const props = defineProps(['params', 'data_channel', 'modelValue'])
 
-const prev_model = ref()
+const prev_model = ref(props.modelValue)
 
 const emit = defineEmits(['update:modelValue', 'click_event'])
 const page  = ref(0)
@@ -54,6 +54,5 @@ const ACTION_INDEX = {
 }
 
 onMounted(async ()=>{
-    prev_model.value = props.modelValue
 })
 </script>
