@@ -19,6 +19,6 @@ export default [
       //terser(), 
       vue(), peerDepsExternal()
     ],
-    external: [ 'vue','primevue/fileupload', 'primeicons/primeicons.css', 'primevue/resources/primevue.min.css', 'primevue/resources/themes/nova/theme.css', 'primevue/inputtext', 'primevue/dropdown', 'primevue/textarea', 'primevue/config', 'primevue/radiobutton', 'primevue/checkbox', 'primevue/calendar', 'primevue/button', 'primevue/image', 'primevue/colorpicker', 'primevue/slider' ,'primevue', 'primevue/tabpanel', 'primevue/tabview', 'primevue/tooltip']
+    external: [ 'vue','primevue/fileupload', 'primevue/inputnumber', 'primeicons/primeicons.css', 'primevue/resources/primevue.min.css', 'primevue/resources/themes/nova/theme.css', 'primevue/inputtext', 'primevue/dropdown', 'primevue/textarea', 'primevue/config', 'primevue/radiobutton', 'primevue/checkbox', 'primevue/calendar', 'primevue/button', 'primevue/image', 'primevue/colorpicker', 'primevue/slider' ,'primevue', 'primevue/tabpanel', 'primevue/tabview', 'primevue/tooltip']
   }
 ]

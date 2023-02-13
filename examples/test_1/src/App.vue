@@ -66,11 +66,13 @@ const f_config = ref({
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 
-                        [{ class:'col', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
-                        { class:'col', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
-                        { class:'col', component: 'I_SELECT', params:{ field: 'categoria_1', 'tooltip':'hola1', label: 'Campo Select',
-                          field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
-                        } }
+                        [
+                          { class:'col', component: 'I_TEXT', params:{ field: 'name',tooltip:"hello moto", label: 'Campo de texto', type: 'text' } },
+                          { class:'col', component: 'I_TEXTAREA', params:{ field: 'descripcion','tooltip':'hola', label: 'Campo Textarea' } },
+                          { class:'col', component: 'I_SELECT', params:{ field: 'categoria_1', 'tooltip':'hola1', label: 'Campo Select',
+                            field_options: "opciones_select_categoria", option_id : "id", option_label: "text"
+                          } },
+                          { class:'col', component: 'I_NUMBER', params:{ field: 'number', min:0, max: 20, tooltip:"number", label: 'Campo de numerico' } },
                         ] 
                       },
                       { class: 'justify-content-md-center row', content: 

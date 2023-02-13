@@ -4,7 +4,7 @@
         <div class="input-group">
             <Calendar :disabled="config.disabled" :inline="config.inline" :selectionMode="config.selectionMode"
                     :dateFormat="config.dateFormat" :showTime="config.showTime"
-                    v-tooltip="config.tooltip"
+                    v-tooltip="config.tooltip" :placeholder="config.placeholder"
                     @year-change="input_event" @date-select="input_event" @click="click_event"
                     v-model="model" class="w-100" />
         </div>        
