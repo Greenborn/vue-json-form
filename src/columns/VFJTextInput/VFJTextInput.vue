@@ -11,14 +11,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { VFJTextInputConf } from './VFJTextInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const emit  = defineEmits(['update:modelValue'])
 const props = defineProps(['params', 'modelValue', 'click'])
 
-const config = ref(new VFJTextInputConf(props.params))
-
-const { input_event, click_event, model } = useInputCommon( emit, config, props )
+const { input_event, click_event, model, config } = useInputCommon( emit, VFJTextInputConf, props )
 </script>

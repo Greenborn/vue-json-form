@@ -22,8 +22,7 @@ import { useInputCommon } from '../VFJInputComposable'
 const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue', 'click'])
 
-const config        = ref(new VFJRadioBtnInputConf(props.params))
 const field_options = ref([])
 
-const { input_event, click_event, model } = useInputCommon( emit, config, props, { field_options:field_options })
+const { input_event, click_event, model, config } = useInputCommon( emit, VFJRadioBtnInputConf, props, { field_options:field_options })
 </script>

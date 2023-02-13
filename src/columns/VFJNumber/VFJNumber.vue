@@ -15,14 +15,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { VFJNumberConf } from './VFJNumberConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const emit  = defineEmits(['update:modelValue'])
 const props = defineProps(['params', 'modelValue', 'click'])
 
-const config = ref(new VFJNumberConf(props.params))
-
-const { input_event, click_event, model } = useInputCommon( emit, config, props )
+const { input_event, click_event, model, config } = useInputCommon( emit, VFJNumberConf, props )
 </script>

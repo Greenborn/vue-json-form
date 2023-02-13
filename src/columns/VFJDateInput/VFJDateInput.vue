@@ -12,14 +12,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { VFJDateInputConf } from './VFJDateInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue', 'click'])
 
-const config = ref(new VFJDateInputConf(props.params))
-
-const { input_event, click_event, model } = useInputCommon( emit, config, props )
+const { input_event, click_event, model, config } = useInputCommon( emit, VFJDateInputConf, props )
 </script>

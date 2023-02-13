@@ -9,14 +9,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import { VFJRangeInputConf } from './VFJRangeInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'modelValue'])
 const emit  = defineEmits(['update:modelValue', 'click'])
 
-const config = ref(new VFJRangeInputConf(props.params))
-
-const { input_event, click_event, model } = useInputCommon( emit, config, props )
+const { input_event, click_event, model, config } = useInputCommon( emit, VFJRangeInputConf, props )
 </script>
