@@ -15,7 +15,7 @@ import { VFJSelectInputConf } from './VFJSelectInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
 const props = defineProps(['params', 'modelValue'])
-const emit  = defineEmits(['update:modelValue'])
+const emit  = defineEmits(['update:modelValue', 'click'])
 const field_options = ref()
 
 const { input_event, click_event, model, config } = useInputCommon( emit, VFJSelectInputConf, props,{ field_options:field_options })

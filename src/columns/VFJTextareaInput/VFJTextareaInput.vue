@@ -15,8 +15,8 @@
 import { VFJTextareaInputConf } from './VFJTextareaInputConf'
 import { useInputCommon } from '../VFJInputComposable'
 
-const emit  = defineEmits(['update:modelValue'])
-const props = defineProps(['params', 'modelValue', 'click'])
+const emit  = defineEmits(['update:modelValue', 'click'])
+const props = defineProps(['params', 'modelValue'])
 
 const { input_event, click_event, model, config } = useInputCommon( emit, VFJTextareaInputConf, props )
 </script>
