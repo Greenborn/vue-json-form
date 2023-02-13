@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-3">
+    <div :class="config.class">
         <label :for="config.key" class="form-label">{{ config.label }}</label>
         <div class="input-group" v-tooltip="config.tooltip">
             <Dropdown v-model="model" class="w-100"

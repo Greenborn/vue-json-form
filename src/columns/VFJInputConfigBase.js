@@ -1,6 +1,6 @@
 export class VFJInputConfigBase {
     label = ''
-    class = ''
+    class = 'col mb-3'
     disabled = false
     field = ''
     dfield = ''

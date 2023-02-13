@@ -1,6 +1,6 @@
 <template>
 
-    <div class="mb-3">
+    <div :class="config.class">
         <label :for="config.field" class="form-label">{{ config.label }}</label>
         <div class="input-group row">
             <div class="field-radiobutton col-12" v-for="(option) in field_options" :key="option">

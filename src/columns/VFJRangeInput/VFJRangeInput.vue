@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-3">
+    <div :class="config.class">
         <label :for="params.field" class="form-label">{{ params.label }}</label>
         <div class="input-group">
             <Slider v-model="model" :range="config.range"  @slideend="input_event" :step="config.step" :min="config.min" :max="config.max" class="w-100"
