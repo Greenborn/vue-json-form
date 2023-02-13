@@ -51,7 +51,7 @@ function click_remove(evnt){
         if (list_data.value[i]._i == evnt.id){
             model_aux.value.delete(evnt)
             list_data.value.splice(i,1)
-            return true
+            break;
         }
     }
     sync_upd( evnt )    
